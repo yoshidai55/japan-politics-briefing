@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年5月29日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年5月29日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年5月29日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    高市政権は外交（日比首脳会談で安保協力を一段格上げ）と財政（3兆円強の補正予算を通常国会に提出へ）で攻めの姿勢を見せる一方、総裁選時の「中傷動画」疑惑が国会で本格的に追及され防御戦も並行している。党内では旧派閥的グループ化が加速し、2027年9月の総裁任期満了をにらんだ「ポスト高市」を意識した動きが水面下で進行中。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">中傷動画問題が国会の主戦場に ...</a></li><li><a href="#topic2">日比首脳会談 — 軍事情報保護...</a></li><li><a href="#topic3">補正予算3兆円強 — 中東情勢...</a></li><li><a href="#topic4">自民・維新連立と議員定数削減 ...</a></li><li><a href="#topic5">自民党内の「グループ化」加速 ...</a></li><li><a href="#topic6">内閣支持率は「消極支持」へ質的...</a></li><li><a href="#points">講演ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">中傷動画問題が国会の主戦場に — 高市首相、文春報道を真っ向否定</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：直ちに市場マターではないが、政権の求心力低下は補正予算審議や定数削減交渉の進度に効いてくる。</p>
+        </div>
+    
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">日比首脳会談 — 軍事情報保護協定（GSOMIA級）交渉開始で合意</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：防衛装備品の対比移転は防衛関連企業（三菱重工、川崎重工、IHIなど）の中期的な輸出案件として注目。インフラ・電力分野でもODAパッケージが連動する可能性。</p>
+        </div>
+    
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">補正予算3兆円強 — 中東情勢を理由に「責任ある積極財政」を継続</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：電力・ガスのエネルギー消費が大きい製造業はコスト一服。一方で長期金利・国債需給への影響は限定的とみられるが、骨太方針（6月策定）に向け、財政規律の表現がどこまで残るかが債券市場の論点。</p>
+        </div>
+    
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">自民・維新連立と議員定数削減 — 「越年」して通常国会で結論へ</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：直接の市場マターではないが、選挙制度改革は中期的な政権安定性のシグナル。改革停滞は2027年総裁選を経た政局不安定化リスクに直結。</p>
+        </div>
+    
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">自民党内の「グループ化」加速 — 旧派閥回帰と「国力研究会」発足へ</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：政権の党内基盤の脆さは政策アジェンダ実行力の制約となる。骨太方針、補正、定数削減のいずれもグループ間調整コストが上昇する局面。</p>
+        </div>
+    
+  </div>
+
+  <div class="topic-card" id="topic6">
+    <div class="topic-number">TOPIC 06</div>
+    <h2 class="topic-title">内閣支持率は「消極支持」へ質的変化 — 高位安定だが構造変質</h2>
+    
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>**ビジネス含意**：高水準支持率は政策推進の追い風として続くが、減税・給付の「生活実感」政策（食料品消費税ゼロ論等）が政権内で再浮上する可能性。 1. **「高市政権は外交で攻め、内政で守る」二面性が今週の典型例**：日比安保格上げ＋豪・越歴訪で同志国外交を実装する一方、中傷動画問題と消極支持化で内政体力は静かに目減りしている。攻守のリズムを意識して語ると説得力が増す。 2. **2027年9月の総裁任期満了から逆算する「派閥回帰」が、政策実行力の真の制約**：定数削減も補正も骨太も、すべて旧派閥的グループ間調整に左右され始めている。「政策イシュー単体ではなく、誰が次の総裁か」を念頭に置いて読み解くと、6月の骨太方針、秋の予算編成の本当のドライバーが見えてくる。 - [連立秋波、揺れる国民民主 高市政権と雪解けムードも：時事ドットコム](https://www.jiji.com/jc/article?k=2026052400219&g=pol) - [高市内閣支持、横ばい59.4％ ―時事世論調査](https://www.jiji.com/jc/article?k=2026052100691&g=pol) - [高市内閣支持率50％ 発足以来最低を更新 毎日新聞世論調査](https://news.yahoo.co.jp/articles/1651660d7173a6e84691005f5198079f3020d8eb) - [高市内閣の支持構造が変化！消極的な支持が増えた理由は「生活実感」か？（選挙ドットコム・JX）](https://go2senkyo.com/articles/2026/05/20/135535.html) - [高市首相、語気強め文春報道否定 中傷動画流布「ないものはない」（時事）](https://www.jiji.com/jc/article?k=2026052800703&g=pol) - [高市首相 中傷動画やりとり "事務所パソコンで確認できず"（NHK）](https://news.web.nhk/newsweb/na/na-k10015133961000) - [日・フィリピン首脳会談及び夕食会（外務省）](https://www.mofa.go.jp/mofaj/s_sa/sea2/ph/pageit_000001_00019.html) - [日・フィリピン首脳会談（首相官邸）](https://www.kantei.go.jp/jp/105/actions/202605/28philippines2.html) - [フィリピンのマルコス大統領、5月26〜29日で国賓来日（日経）](https://www.nikkei.com/article/DGXZQOUA241WQ0U6A420C2000000/) - [中東情勢を踏まえた令和8年度補正予算等についての会見（首相官邸）](https://www.kantei.go.jp/jp/105/statement/2026/0525kaiken.html) - [中東情勢で3兆円強規模の補正予算案を来週にも提出 高市首相（NHK）](https://news.web.nhk/newsweb/na/na-k10015130481000) - [高市首相は3兆円強の補正予算の編成を表明：財政の信頼性維持と節約呼びかけの是非（NRI）](https://www.nri.com/jp/media/column/kiuchi/20260526.html) - [自民・維新、議員定数削減「越年」へ 選挙制度改革と一体協議（日経）](https://www.nikkei.com/article/DGXZQOUA2159J0R21C25A1000000/) - [自民・維新、定数削減法案を承認 1年で結論出なければ45減（日経）](https://www.nikkei.com/article/DGXZQOUA04AXI0U5A201C2000000/) - [自民党・維新連立に4つの火種（日経）](https://www.nikkei.com/article/DGXZQOUA182QW0Y5A011C2000000/) - [自民グループが活発化 人事・総裁選視野に（時事）](https://www.jiji.com/jc/article?k=2026050400264&g=pol) - [自民党、派閥禁止の落とし穴 「必要悪」が消えた後のガバナンス（日経）](https://www.nikkei.com/article/DGXZQOUA21CGV0R20C26A4000000/) - [岸田文雄元首相「再登板の布石か」と憶測も…旧宏池会有志秘書会研修会に登壇（SmartFLASH）](https://topics.smt.docomo.ne.jp/article/smartflash/nation/smartflash-408143?page=5) - [国民民主党・玉木代表会見 2026年5月19日（公式）](https://www.youtube.com/watch?v=k7qCS9paMBg) - [国民民主、連立入り否定 玉木氏「是々非々」路線強調（時事）](https://www.jiji.com/jc/article?k=2026020800875&g=pol) - [2026年の日本政治：高市首相の解散判断が最大の焦点（nippon.com）](https://www.nippon.com/ja/in-depth/d01197/)</p>
+        </div>
+    
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 講演で使えるポイント</div>
+    
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"></ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年5月29日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
