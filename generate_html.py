@@ -4,9 +4,8 @@
 
 使い方:
   python generate_html.py <markdownファイルパス>
-
-例:
-  python generate_html.py 日本政治ブリーフィング_2026-06-06.md
+  python generate_html.py            # 最新のMarkdownを自動選択
+  python generate_html.py --all      # 同フォルダ内すべてのMarkdownを一括変換
 """
 
 import sys
@@ -14,10 +13,9 @@ import os
 import re
 from datetime import datetime
 
-def parse_markdown(md_text):
-    """MarkdownからセクションとメタデータをParseする"""
-    lines = md_text.split('\n')
 
+def parse_markdown(md_text):
+    """MarkdownからセクションとメタデータをParseする（堅牢版）"""
     title = ''
     date_str = ''
     summary = ''
@@ -25,84 +23,141 @@ def parse_markdown(md_text):
     points = []
     sources = []
 
-    state = None
     current_topic = None
     current_section = None
+    state = None
 
-    for line in lines:
-        # タイトル行
-        if line.startswith('# '):
+    def finalize_topic():
+        nonlocal current_topic, current_section
+        if current_topic:
+            topics.append(current_topic)
+            current_topic = None
+            current_section = None
+
+    for raw_line in md_text.split('\n'):
+        line = raw_line
+        stripped = line.strip()
+
+        # ---- セクション見出し（先に処理して状態遷移を確実に） ----
+
+        # タイトル行（H1）
+        if line.startswith('# ') and not line.startswith('## '):
             title = line[2:].strip()
             m = re.search(r'(\d{4}年\d{1,2}月\d{1,2}日)', title)
             if m:
                 date_str = m.group(1)
             continue
 
-        # サマリー開始
+        # サマリー
         if '今日のひとことサマリー' in line:
+            finalize_topic()
             state = 'summary'
             continue
 
-        # トピック見出し（数字付き ## ）— stateに関わらず常に優先処理
-        if re.match(r'^## \d+\.', line):
-            if state == 'summary':
-                state = None
-            if current_topic:
-                topics.append(current_topic)
-            title_text = re.sub(r'^## \d+\.\s*', '', line).strip()
+        # トピック見出し「## 1. ...」「### 1. ...」両対応
+        if re.match(r'^#{2,3}\s+\d+\.', line):
+            finalize_topic()
+            title_text = re.sub(r'^#{2,3}\s+\d+\.\s*', '', line).strip()
             current_topic = {'title': title_text, 'fact': '', 'context': '', 'implication': ''}
             current_section = None
             state = 'topic'
             continue
 
-        # サマリー本文（--- と # を除く）
-        if state == 'summary':
-            if line.startswith('##') or line.startswith('---'):
-                state = None
-            elif line.strip():
-                summary += line.strip() + ' '
-            continue
-
-        # トピック本文
-        if state == 'topic' and current_topic:
-            if '**何が起きたか**' in line:
-                current_section = 'fact'
-            elif '**背景・文脈**' in line:
-                current_section = 'context'
-            elif '**経済・政策への含意**' in line:
-                current_section = 'implication'
-            elif line.startswith('##') or line.strip() == '---':
-                pass  # セパレーターは無視（次のifブロックで処理）
-            elif current_section and line.strip() and not line.startswith('#') and line.strip() != '---':
-                current_topic[current_section] += line.strip() + ' '
-            continue
-
-        # 講演ポイント
-        elif '講演で使えるポイント' in line:
+        # ポイント見出し（新旧両対応）
+        if re.match(r'^##\s+(💡\s*)?(ポイント|講演で使えるポイント)\s*$', line):
+            finalize_topic()
             state = 'points'
-            if current_topic:
-                topics.append(current_topic)
-                current_topic = None
-        elif state == 'points':
-            if line.startswith('## ') or line.startswith('---'):
-                state = None
-            elif re.match(r'^\d+\.', line.strip()) or line.startswith('- **'):
-                m = re.match(r'^[\d\-\.]+\s*\*\*(.*?)\*\*——?(.*)', line.strip())
-                if m:
-                    points.append({'title': m.group(1), 'text': m.group(2).strip()})
-                elif line.strip():
-                    points.append({'title': '', 'text': line.strip()})
+            continue
 
-        # 出典
-        elif '## 出典' in line:
+        # 出典見出し
+        if re.match(r'^##\s+出典\s*$', line):
+            finalize_topic()
             state = 'sources'
-        elif state == 'sources':
-            m = re.match(r'^- \[(.*?)\]\((.*?)\)', line)
-            if m:
-                sources.append({'text': m.group(1), 'url': m.group(2)})
+            continue
 
-    if current_topic:
-        topics.append(current_topic)
+        # その他の ## 見出し（カテゴリ未指定）→ 状態クリア
+        if line.startswith('## '):
+            finalize_topic()
+            state = None
+            continue
+
+        # 区切り線
+        if stripped == '---':
+            # トピック内は終わり、次のセクション見出しを待つ
+            continue
+
+        # ---- 状態別の本文処理 ----
+
+        if state == 'summary':
+            if stripped:
+                summary += stripped + ' '
+            continue
+
+        if state == 'topic' and current_topic:
+            # 「事実」「何が起きたか」両対応
+            if re.search(r'\*\*(何が起きたか|事実)\*\*', line):
+                current_section = 'fact'
+                # ラベル行に本文が同居している場合に対応
+                tail = re.sub(r'^.*\*\*(?:何が起きたか|事実)\*\*[:：]?\s*', '', stripped)
+                if tail:
+                    current_topic['fact'] += tail + ' '
+                continue
+            if re.search(r'\*\*背景[・･]?文脈\*\*', line):
+                current_section = 'context'
+                tail = re.sub(r'^.*\*\*背景[・･]?文脈\*\*[:：]?\s*', '', stripped)
+                if tail:
+                    current_topic['context'] += tail + ' '
+                continue
+            if re.search(r'\*\*経済[・･]?(政策|市場)への含意\*\*', line):
+                current_section = 'implication'
+                tail = re.sub(r'^.*\*\*経済[・･]?(?:政策|市場)への含意\*\*[:：]?\s*', '', stripped)
+                if tail:
+                    current_topic['implication'] += tail + ' '
+                continue
+            if current_section and stripped and not stripped.startswith('#'):
+                current_topic[current_section] += stripped + ' '
+            continue
+
+        if state == 'points':
+            if not stripped:
+                continue
+            # 形式A:「1. **タイトル** ——本文」「1. **タイトル** 本文」（1行完結）
+            m = re.match(
+                r'^(?:\d+\.|-)\s*\*\*(.+?)\*\*\s*(?:[—–\-]+)?\s*(.+)$',
+                stripped,
+            )
+            if m:
+                points.append({'title': m.group(1).strip(), 'text': m.group(2).strip()})
+                continue
+            # 形式B:「**1. タイトル**」だけの行（本文は次行以降）
+            m = re.match(r'^\*\*\s*(\d+\.\s*.+?)\s*\*\*\s*$', stripped)
+            if m:
+                title = re.sub(r'^\d+\.\s*', '', m.group(1)).strip()
+                points.append({'title': title, 'text': ''})
+                continue
+            # 形式C:「**タイトル**」だけの行（番号なし）
+            m = re.match(r'^\*\*\s*(.+?)\s*\*\*\s*$', stripped)
+            if m:
+                points.append({'title': m.group(1).strip(), 'text': ''})
+                continue
+            # 形式D: 番号付きで太字なし（1行）
+            m = re.match(r'^(?:\d+\.|-)\s*(.+)$', stripped)
+            if m:
+                points.append({'title': '', 'text': m.group(1).strip()})
+                continue
+            # 形式E: 直前のポイントの本文（追記）
+            if points and not stripped.startswith('#'):
+                sep = ' ' if points[-1]['text'] else ''
+                points[-1]['text'] = (points[-1]['text'] + sep + stripped).strip()
+            continue
+
+        if state == 'sources':
+            m = re.match(r'^-\s*\[(.+?)\]\((.+?)\)', stripped)
+            if m:
+                sources.append({'text': m.group(1).strip(), 'url': m.group(2).strip()})
+            continue
+
+    finalize_topic()
 
     return {
         'title': title,
@@ -114,7 +169,13 @@ def parse_markdown(md_text):
     }
 
 
-def generate_html(data, date_for_filename):
+def html_escape(s):
+    return (s.replace('&', '&amp;')
+             .replace('<', '&lt;')
+             .replace('>', '&gt;'))
+
+
+def generate_html(data):
     """パースデータからHTMLを生成"""
 
     topics_html = ''
@@ -155,7 +216,7 @@ def generate_html(data, date_for_filename):
 
     points_html = ''
     for i, p in enumerate(data['points'], 1):
-        title_part = f'<strong>{p["title"]}</strong>——' if p['title'] else ''
+        title_part = f'<strong>{p["title"]}</strong>　' if p['title'] else ''
         points_html += f'''
     <div class="point-item">
       <div class="point-num">{i}</div>
@@ -164,7 +225,7 @@ def generate_html(data, date_for_filename):
 
     sources_html = ''
     for s in data['sources']:
-        sources_html += f'<li><a href="{s["url"]}" target="_blank">{s["text"]}</a></li>\n'
+        sources_html += f'<li><a href="{s["url"]}" target="_blank" rel="noopener">{s["text"]}</a></li>\n'
 
     toc_html = ''.join([f'<li><a href="#topic{i+1}">{t["title"][:15]}...</a></li>' for i, t in enumerate(data['topics'])])
 
@@ -245,11 +306,11 @@ def generate_html(data, date_for_filename):
 <main>
   <nav class="toc">
     <div class="toc-title">Topics</div>
-    <ul class="toc-list">{toc_html}<li><a href="#points">講演ポイント</a></li></ul>
+    <ul class="toc-list">{toc_html}<li><a href="#points">ポイント</a></li></ul>
   </nav>
   {topics_html}
   <div class="points-card" id="points">
-    <div class="points-title">💡 講演で使えるポイント</div>
+    <div class="points-title">💡 ポイント</div>
     {points_html}
   </div>
   <div class="sources-section">
@@ -266,84 +327,92 @@ def generate_html(data, date_for_filename):
     return html
 
 
-def main():
-    if len(sys.argv) < 2:
-        # 最新のMarkdownファイルを自動検出
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        md_files = sorted([f for f in os.listdir(script_dir) if f.startswith('日本政治ブリーフィング_') and f.endswith('.md')], reverse=True)
-        if not md_files:
-            print("エラー: Markdownファイルが見つかりません")
-            sys.exit(1)
-        md_path = os.path.join(script_dir, md_files[0])
-        print(f"最新ファイルを使用: {md_files[0]}")
-    else:
-        md_path = sys.argv[1]
-        if not os.path.isabs(md_path):
-            md_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), md_path)
-
-    if not os.path.exists(md_path):
-        print(f"エラー: ファイルが見つかりません: {md_path}")
-        sys.exit(1)
-
+def process_one(md_path, update_index=True):
     with open(md_path, 'r', encoding='utf-8') as f:
         md_text = f.read()
 
     data = parse_markdown(md_text)
 
-    # 日付をファイル名用に変換 (例: 2026年6月6日 → 2026-06-06)
     m = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', data['date'])
     if m:
         date_for_filename = f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
     else:
-        # MarkdownのファイルパスからYYYY-MM-DDを抽出
         m2 = re.search(r'(\d{4}-\d{2}-\d{2})', os.path.basename(md_path))
         date_for_filename = m2.group(1) if m2 else datetime.today().strftime('%Y-%m-%d')
 
-    html = generate_html(data, date_for_filename)
+    html = generate_html(data)
 
     output_dir = os.path.dirname(md_path)
     output_path = os.path.join(output_dir, f"{date_for_filename}.html")
-
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(html)
+    print(f"OK HTML: {output_path}  (topics={len(data['topics'])}, points={len(data['points'])}, sources={len(data['sources'])})")
 
-    print(f"✅ HTML生成完了: {output_path}")
+    if not update_index:
+        return
 
-    # index.html のバックナンバーリストに追記
     index_path = os.path.join(output_dir, 'index.html')
-    if os.path.exists(index_path):
-        with open(index_path, 'r', encoding='utf-8') as f:
-            index_html = f.read()
+    if not os.path.exists(index_path):
+        return
+    with open(index_path, 'r', encoding='utf-8') as f:
+        index_html = f.read()
 
-        # すでに同じ日付が含まれているかチェック
-        if date_for_filename not in index_html:
-            new_card = f"""    <a class="briefing-card" href="{date_for_filename}.html">
+    if date_for_filename in index_html:
+        return  # 既にあれば触らない
+
+    new_card = f"""    <a class="briefing-card" href="{date_for_filename}.html">
       <div class="card-date">{data['date']}<span class="latest-badge">Latest</span></div>
       <div class="card-summary">{data['summary'][:100]}...</div>
       <div class="card-arrow">このブリーフィングを読む →</div>
     </a>
 
 """
-            # 既存のLatest バッジを消す
-            index_html = index_html.replace('<span class="latest-badge">Latest</span>', '')
-            # グリッドの「先頭」に新しいカードを挿入（最新が一番上）
-            grid_marker = '<div class="briefing-grid">'
-            index_html = index_html.replace(
-                grid_marker,
-                grid_marker + '\n\n' + new_card,
-                1,
-            )
-            # バックナンバー件数を自動更新
-            count = len(re.findall(r'<a class="briefing-card"', index_html))
-            index_html = re.sub(
-                r'バックナンバー一覧（\d+号）',
-                f'バックナンバー一覧（{count}号）',
-                index_html,
-            )
+    index_html = index_html.replace('<span class="latest-badge">Latest</span>', '')
+    grid_marker = '<div class="briefing-grid">'
+    index_html = index_html.replace(grid_marker, grid_marker + '\n\n' + new_card, 1)
+    count = len(re.findall(r'<a class="briefing-card"', index_html))
+    index_html = re.sub(r'バックナンバー一覧（\d+号）',
+                        f'バックナンバー一覧（{count}号）', index_html)
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write(index_html)
+    print(f"  index.html updated (total {count})")
 
-            with open(index_path, 'w', encoding='utf-8') as f:
-                f.write(index_html)
-            print(f"✅ index.html を更新しました（合計 {count}号）")
+
+def main():
+    args = sys.argv[1:]
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    if '--all' in args:
+        md_files = sorted([f for f in os.listdir(script_dir)
+                           if f.startswith('日本政治ブリーフィング_') and f.endswith('.md')])
+        if not md_files:
+            print('エラー: Markdownファイルが見つかりません')
+            sys.exit(1)
+        for name in md_files:
+            process_one(os.path.join(script_dir, name), update_index=False)
+        print(f'== 全 {len(md_files)} 本を再生成しました ==')
+        return
+
+    if not args:
+        md_files = sorted([f for f in os.listdir(script_dir)
+                           if f.startswith('日本政治ブリーフィング_') and f.endswith('.md')],
+                          reverse=True)
+        if not md_files:
+            print('エラー: Markdownファイルが見つかりません')
+            sys.exit(1)
+        md_path = os.path.join(script_dir, md_files[0])
+        print(f'最新ファイルを使用: {md_files[0]}')
+    else:
+        md_path = args[0]
+        if not os.path.isabs(md_path):
+            md_path = os.path.join(script_dir, md_path)
+
+    if not os.path.exists(md_path):
+        print(f'エラー: ファイルが見つかりません: {md_path}')
+        sys.exit(1)
+
+    process_one(md_path)
+
 
 if __name__ == '__main__':
     main()
