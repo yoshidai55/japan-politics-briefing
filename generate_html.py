@@ -317,21 +317,33 @@ def main():
 
         # すでに同じ日付が含まれているかチェック
         if date_for_filename not in index_html:
-            new_card = f"""
-    <a class="briefing-card" href="{date_for_filename}.html">
+            new_card = f"""    <a class="briefing-card" href="{date_for_filename}.html">
       <div class="card-date">{data['date']}<span class="latest-badge">Latest</span></div>
       <div class="card-summary">{data['summary'][:100]}...</div>
       <div class="card-arrow">このブリーフィングを読む →</div>
     </a>
+
 """
             # 既存のLatest バッジを消す
             index_html = index_html.replace('<span class="latest-badge">Latest</span>', '')
-            # コメントの直前に新しいカードを挿入
-            index_html = index_html.replace('    <!-- 追加分はここに記入 -->', new_card + '\n    <!-- 追加分はここに記入 -->')
+            # グリッドの「先頭」に新しいカードを挿入（最新が一番上）
+            grid_marker = '<div class="briefing-grid">'
+            index_html = index_html.replace(
+                grid_marker,
+                grid_marker + '\n\n' + new_card,
+                1,
+            )
+            # バックナンバー件数を自動更新
+            count = len(re.findall(r'<a class="briefing-card"', index_html))
+            index_html = re.sub(
+                r'バックナンバー一覧（\d+号）',
+                f'バックナンバー一覧（{count}号）',
+                index_html,
+            )
 
             with open(index_path, 'w', encoding='utf-8') as f:
                 f.write(index_html)
-            print(f"✅ index.html を更新しました")
+            print(f"✅ index.html を更新しました（合計 {count}号）")
 
 if __name__ == '__main__':
     main()
