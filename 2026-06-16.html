@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年6月16日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年6月16日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年6月16日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    高市早苗首相がフランス・エビアンのG7サミット（6月15〜17日）に出席中で、重要鉱物の「共同備蓄連携構想」を提案するなど存在感を示している。国内では自民・維新連立政権の核心である議員定数削減法案が依然として停滞し、連立の火種がくすぶり続けている。自民党内では5月に発足した「国力研究会」（別称JiB）が347人規模に膨らみ、2027年9月の総裁選を見据えた党内グループ競争が始まっている。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">高市首相、G7エビアン・サミッ...</a></li><li><a href="#topic2">自民・維新の連立に亀裂の火種―...</a></li><li><a href="#topic3">自民党「国力研究会」が347人...</a></li><li><a href="#topic4">公的年金、2026年度初支給―...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">高市首相、G7エビアン・サミットに出席――重要鉱物の共同備蓄を提案</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市早苗首相は6月13日から18日にかけて英国・イタリア・フランスを歴訪している。14日にロンドンでスターマー英首相、15日にローマでメローニ伊首相と個別会談を行い、その後フランス・エビアンに移動。6月15日から17日にかけて開催される第52回G7サミットに出席している。サミットでは中東・ウクライナ・インド太平洋情勢のほか、エネルギー安全保障と重要鉱物サプライチェーンの強靱化が主要議題となっている。日本が提案したのは「共同備蓄連携構想」で、G7各国の重要鉱物備蓄制度を相互連携させ、中国による輸出規制などに対抗する枠組みの立ち上げを呼びかけた。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市政権は発足当初から「力の時代」の外交方針を掲げ、法の支配と経済安全保障を軸に同志国との連携を強化してきた。中国は2025年以降、希土類（レアアース）や黒鉛など戦略物資の輸出規制を強化しており、日本の半導体・EV・防衛産業への影響が懸念されている。また、トランプ政権下で米国が欧州各国との距離を縮めるなか、高市首相はG7内の「結節点」として米欧の橋渡しを狙う戦略をとっている。スターマー英首相との会談では「準同盟国のレベルに達している」と双方が評価し、今後の安保・経済協力の一段の高みを目指すことで合意した。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>共同備蓄連携構想が合意に至れば、レアアース・黒鉛・リチウムなど中国依存の高い鉱物資源の調達リスクが分散され、日本の半導体製造（ラピダス等）や蓄電池産業の安定化につながる。G7内での多国間枠組み化は、日本単独の交渉力を超えた抑止力になりうる。他方、中国との経済摩擦の激化を招くリスクもあり、対中融和路線をとる欧州との調整が今後の課題となる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">自民・維新の連立に亀裂の火種――議員定数削減が今国会も宙に浮く</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>日本維新の会が連立参加の最大条件として求めてきた衆院議員定数削減（465議席から45議席減の420議席以内）について、自民党内で難色を示す声が根強く、2026年通常国会での法案成立が困難な状況が続いている。日経新聞の6月3日付報道によれば、維新は首相に直接動くよう働きかける構図になっており、自民党幹事長は「会期延長は考えにくい」と語った。今国会の会期は6月中に終了する見込みで、定数削減法案は三度目の先送り局面を迎えている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>2025年12月、自民・維新は「プログラム法案（枠組み法）」を先行提出し、1年以内に具体的な選挙制度改革と一体で結論を出さなければ小選挙区25・比例20の計45議席を自動削減するという「タイマー条項」付きの法案を承認した。しかし自民党内では、選挙区の区割り変更で議席を失うことへの抵抗感が強く、実質的な審議を引き延ばしている。維新内部では「合意履行を求める強硬派」と「連立継続を優先する現実派」が対立しており、高市首相の指導力が問われる局面だ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>議員定数削減は単なる国会改革にとどまらず、選挙制度の抜本見直し（選挙区再編）と表裏一体であるため、自民党議員の利害と直結する。この問題が長期化すると、維新の存在感低下と連立内の信頼関係損傷を招き、通常国会後半の予算外法案・安保関連法案の審議日程に支障が出る恐れがある。タイマー条項の1年期限（2026年12月ごろ）が近づくにつれ、秋以降に政局の焦点となる可能性が高い。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">自民党「国力研究会」が347人規模に　2027年総裁選への布石</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民党内で5月8日に発足した「国力研究会」（通称JiB＝Japan is Back）が急速に拡大し、自民党議員347人が参加する最大規模のグループとなっている。麻生太郎副総裁、茂木敏充外相、小泉進次郎防衛相、小林鷹之政調会長らが発起人に名を連ねている。2025年総裁選で高市首相の対抗馬だった茂木氏（林芳正氏を除く）も参加しており、「総主流派体制」の様相を呈している。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>自民党は2024年の政治資金問題を契機に、従来の「派閥」を解消したが、人事・政策・総裁選に向けた連携を担う「グループ」化の動きは衰えていない。高市首相の総裁任期は2027年9月に満了を迎えるため、各議員は再選支持か後継候補擁立かを視野に入れてグループ内の立ち位置を固めつつある。5月以降に自民党内グループの活動が活発化しているのは、次の総裁選に向けた"準備段階"とみる向きが多い。特に麻生氏がリードする形でグループを糾合し、「論功行賞色の濃い高市人事」への求心力を維持する構図が鮮明だ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>グループ化は総裁選の派閥票の代替機能を担うが、政策的な結束力は従来の派閥より緩い。このため、安保・経済安保・財政など重要政策でグループ内に温度差が生じた場合、法案審議や予算編成での調整コストが上昇する。また、旧来の派閥構造が薄れることで「陳情政治」の経路も変化しており、産業界・地方自治体からの政策ロビーのあり方も転換期にある。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">公的年金、2026年度初支給――基礎年金が初めて月7万円超</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>6月15日（月）、2026年度最初の公的年金が支給された。今年度の基礎年金（国民年金）の満額は月7万608円となり、過去初めて月7万円台を突破した。賃金・物価上昇を反映した改定額として支給されたもので、厚生年金（標準的なモデル夫婦）も合わせて増額となっている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市政権は「賃金・物価上昇の好循環」を経済運営の基軸に掲げており、年金のマクロ経済スライドも稼働し始めた。2025年以降、春闘での大幅賃上げが続き、その賃金上昇が年金額に反映される形になっている。一方、物価上昇が生活費を圧迫しており、7万円超えを「実質的な購買力向上」と受け取れるかは慎重な評価が必要だ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>年金の増額は高齢者の消費刺激要因となる一方、財政負担の増加を意味する。厚生労働省が進める年金制度改革（2025年法改正）では「在職老齢年金の廃止」「育児期間中の保険料免除」など就労促進策も盛り込まれており、給付と負担のバランスの再設計が引き続き政治的テーマとなっている。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>G7での存在感と対中抑止の枠組みづくり</strong>　高市首相は「共同備蓄連携構想」を打ち出すことでG7の対中資源外交に日本独自の貢献軸を示した。これは経済安全保障政策の「外交化」であり、国内の半導体・蓄電池産業の競争力と直結する。講演では「日本が資源安保のアーキテクチャを主導している」という文脈で使えるエピソードだ。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>自民・維新連立の「タイマー爆弾」</strong>　議員定数削減の自動削減条項は2026年12月に期限を迎える。自民が先送りを続けるならば維新の連立離脱・条件再交渉が浮上し、高市政権の国会運営に直接影響が出る。与野党の数的均衡とガバナンス安定性を論じる文脈で有効な事例だ。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>派閥解消後の「グループ政治」と総裁選サイクル</strong>　「国力研究会」の発足は、カネの流れが見えにくくなった「ポスト派閥」時代の党内政治を象徴する。政策立案への影響・政治資金規制の実効性・次期総裁選のシナリオを三点セットで語ると、日本政治の構造変化を分かりやすく伝えられる。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.nikkei.com/article/DGXZQOUA11CRB0R10C26A6000000/" target="_blank" rel="noopener">高市首相、重要鉱物のG7共同備蓄を提案へ（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA120WY0S6A610C2000000/" target="_blank" rel="noopener">高市首相、G7で米欧の「結節」探る（日本経済新聞）</a></li>
+<li><a href="https://www.mofa.go.jp/mofaj/ecm/epc/pageit_000001_03010.html" target="_blank" rel="noopener">高市総理大臣の英国・イタリア訪問及びG7エビアン・サミット出席（外務省）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015149721000" target="_blank" rel="noopener">15日からフランスでG7サミット 高市首相どう臨む（NHKニュース）</a></li>
+<li><a href="https://www.nikkei.com/article/DGKKZO96658530S6A600C2PD0000/" target="_blank" rel="noopener">維新「連立の条件」停滞 肝煎りの定数削減法案（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA1611L0W5A211C2000000/" target="_blank" rel="noopener">自民・維新、定数削減法案を通常国会に先送り（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA010QD0R01C25A2000000/" target="_blank" rel="noopener">自民・維新、衆院定数「自動削減」に合意（日本経済新聞）</a></li>
+<li><a href="https://www.jcp.or.jp/akahata/aik26/2026-05-08/2026050802_03_0.php" target="_blank" rel="noopener">自民党「国力研究会」発足へ（しんぶん赤旗）</a></li>
+<li><a href="https://go2senkyo.com/articles/2026/05/08/134699.html" target="_blank" rel="noopener">高市支持グループ「国力研究会」が誕生（選挙ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026050400264&g=pol" target="_blank" rel="noopener">自民グループが活発化 人事・総裁選視野に（時事通信）</a></li>
+<li><a href="https://www.nikkei.com/topics/25093001" target="_blank" rel="noopener">高市早苗政権に関する最新ニュース（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA010Z10R00C26A5000000/" target="_blank" rel="noopener">高市首相の新外交方針（日本経済新聞）</a></li>
+<li><a href="https://www.kantei.go.jp/jp/105/statement/2026/0613kaiken.html" target="_blank" rel="noopener">英国・イタリア訪問及びG7エビアン・サミット出席についての会見（首相官邸）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年6月16日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
