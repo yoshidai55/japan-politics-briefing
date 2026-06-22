@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年6月22日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年6月22日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年6月22日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    会期末（7月17日）まで1カ月を切り、高市政権は重要法案の処理を急いでいる。安定的な皇位継承をめぐっては、衆参両院議長が13党による「立法府の総意」を6月10日に高市首相へ報告し、政府は女性皇族の身分保持と旧宮家男系男子の養子縁組を柱とする皇室典範改正案の今国会提出・成立をめざす。経済政策では、減税と給付を組み合わせる「給付付き税額控除」の有識者会議が6月17日に中間取りまとめの方向を提示し、「給付先行」で2027年度実施をめざす姿が固まりつつある。一方、自民党内では派閥解散後の「グループ回帰」が進み、麻生派の突出と2027年総裁選をにらんだ党内力学が水面下で動いている。内閣支持率は時事通信調査で54.3％と発足後最低を更新したが、なお高水準を保つ。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">皇室典範改正：国会「総意」を受...</a></li><li><a href="#topic2">給付付き税額控除：6月中間取り...</a></li><li><a href="#topic3">自民党の「派閥回帰」：麻生派の...</a></li><li><a href="#topic4">食料品消費税減税の最終判断と補...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">皇室典範改正：国会「総意」を受け、政府が皇位継承の法整備へ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>衆参両院議長は2026年6月10日、安定的な皇位継承・皇族数確保策について全13党による「立法府の総意」を取りまとめ、高市早苗首相に報告した。総意は、（1）女性皇族が結婚後も皇室に残り身分を保持する案と、（2）戦後の1947年10月に皇籍を離脱した旧11宮家の男系男子を養子縁組で皇族に迎える案――の2案を政府に示し、法整備を促した。養子縁組で皇族となった人は皇位継承資格を持たないとされ、政府には養子の年齢や養親の範囲、具体的な手続きの「丁寧な制度設計」が求められた。政府・与党はこれを受けて皇室典範改正案の作成を進め、今国会中の提出・成立をめざしている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>皇位継承資格を持つのは現在ごくわずかで、皇族数の減少は長年の懸案だった。2024年に与野党が議論を本格化させたが、女系・女性天皇の是非という根本論には踏み込まず、当面の「皇族数確保」に絞って合意を模索してきた経緯がある。旧宮家養子案は「男系維持」を重視する保守層の意向を強く反映したもので、高市首相自身が男系継承を重視する立場として知られる。「立法府の総意」という異例の枠組みで与野党が足並みをそろえた点に、この問題の超党派的な性格が表れている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>皇室制度は直接の経済政策ではないが、国家の根幹に関わる制度改正であり、与野党が対立軸を持ち込みにくい数少ないテーマである。会期末が迫るなか、与野党が比較的協調しやすいこの法案を先行処理することで、政権は国会運営の実績を積み、対立の激しい定数削減や減税の議論に弾みをつける狙いもある。講演では「保守政権下での皇室制度改革」という切り口で、高市カラーと超党派合意の交差点として論じられる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">給付付き税額控除：6月中間取りまとめ、「給付先行」で2027年度実施めざす</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>減税と現金給付を組み合わせる「給付付き税額控除」をめぐり、政府・与野党が設けた有識者会議は2026年6月17日の第15回会合で、座長が「中間取りまとめの方向（座長案）」を提示した。5月20〜21日の与野党実務者協議では、当面は税額控除を見送り「給付のみ」に一本化して制度を始動させる方向でおおむね一致しており、対象は中低所得の勤労世代と、103万円・106万円・130万円付近の「年収の壁」に直面するパート・アルバイトらが主な想定だ。2027年度の実施を目標に、6月中の中間取りまとめを経て、秋の臨時国会への法案提出をめざす。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>給付付き税額控除は、消費税減税論と物価高対策の「落としどころ」を探る制度として与野党が共同で検討を進めてきた。所得税額を控除し、税額が少なく控除しきれない低所得層には不足分を現金給付する仕組みで、マイナンバーに公金受取口座を登録していれば自動給付、未登録なら確定申告が必要になる案が議論されている。複雑な制度設計ゆえに「給付先行」で実務を簡素化し、まず制度を立ち上げる現実路線が選ばれた格好だ。食料品消費税減税の議論とも財源面で密接に絡む。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>給付付き税額控除は、低所得層への再分配を税と給付の両面で行う仕組みであり、定着すれば日本の社会保障・税制の設計思想を変えうる。「年収の壁」を対象に含めたことで、就労調整の緩和という労働供給面の効果も期待される。企業の人事・賃金担当にとっては、パート・アルバイトの働き方や手取りに影響する制度であり、設計の詳細を注視する必要がある。2027年度実施を軸に、秋の臨時国会での法案化が次の節目となる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">自民党の「派閥回帰」：麻生派の突出と2027年総裁選にらむ党内力学</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>2024年の派閥解散後も、自民党内では旧派閥を母体としたグループ化・実質的な「派閥回帰」が進んでいる。2月の衆院選後、麻生派（志公会）は解散時の43人から約60人規模へ急拡大し、副総裁・官房長官・総務会長など要職を押さえて党内で突出した存在感を示す。これに対抗し、旧茂木派・旧岸田派の流れをくむグループや、武田良太・元総務相が4月に立ち上げた「安全保障研究会」（20人超）など、新たな勢力結集の動きが相次ぐ。一部メディアは、こうした動きを2027年の総裁選をにらんだ「ポスト高市」争いの前哨戦と位置づけている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>派閥は政治資金問題を受けて「必要悪」として解散されたが、人事・選挙・総裁選を回す装置としての機能は容易には失われず、グループという形で復活しつつある。衆院選で自民が単独3分の2に迫る議席を得て党が巨大化したことも、新人議員の「面倒を見る」受け皿としてグループ需要を高めている。麻生派の突出に対しては「麻生派ばかりが良い思いをするのはおかしい」との対抗心も党内にくすぶり、高市首相の求心力が支持率次第で揺らげば「高市おろし」につながりかねないとの見方もある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>党内グループの再編は、政策決定の主導権がどこに集まるかを左右する。高市政権の積極財政・安全保障重視路線が今後も維持されるかは、党内力学の安定度に依存する。仮に総裁選をにらんだ権力闘争が早期に表面化すれば、政権基盤の不確実性が高まり、重要法案や予算編成の見通しに影響が及ぶ。投資家・経営者にとっては、内閣支持率と並んで「自民党内グループの勢力図」が政局リスクを読む手がかりとなる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">食料品消費税減税の最終判断と補正予算：物価高対策が当面の焦点</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市首相が衆院選で公約に掲げた食料品の消費税減税について、政府・与党は2027年4月1日の開始に向けて最終調整を進めており、首相が6月下旬に税率などの最終判断を下す見込みだ。税率は当面1％案が軸で、レジ改修期間が1％なら5〜6カ月程度に対しゼロ税率では1年程度かかることが実務者会議で確認された。並行して、中東情勢の悪化に対応する2026年度補正予算（一般会計の歳出総額3兆1135億円、「中東情勢等対応予備費」2兆5000億円が柱）が6月3日に審議入りし、7〜9月の電気・ガス料金支援などが盛り込まれている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市首相は「食料品消費税ゼロ」を悲願として掲げてきたが、実務上の制約から1％案が現実的な軸として浮上した。外食は10％を維持する見通しで、外食業界や中小農家への補助金支援が検討されている。補正予算は、5月にいったん「不要」とした首相が中東情勢を理由に「必要」へ転じた経緯があり、財源は赤字国債で賄う。物価高対策をめぐる減税・給付・補助の三正面で、積極財政路線と財政規律のバランスが政権の試金石となっている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>食料品減税は家計の可処分所得を直接押し上げる一方、税収減の規模次第では国債発行や円安・金利上昇のリスクを高めるとの指摘がある。小売・外食・食品関連の事業者にとっては、税率・対象範囲・開始時期の最終決定がレジ改修や価格設定、仕入れ計画に直結する。補正予算のエネルギー支援は、夏場の電気・ガス料金を通じて家計と企業コストの双方に効く。6月下旬の最終判断は、消費関連企業の経営計画と国債市場の双方に影響する重要イベントとなる。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>高支持率の影で進む支持構造の地殻変動</strong>　時事通信の6月調査で高市内閣の支持率は54.3％と発足後最低を更新し、不支持も発足後最高となった。NHK調査では60％台を保つなど調査差はあるが、「政策が期待できる」を理由とする支持が30％未満へ低下し、「他よりよい」という消極的支持が増えている点が特徴だ。AI中傷動画問題の長期化と物価高が重しとなる一方、若年層を中心になお高水準を維持している。「高支持率政権が抱える脆さ」は講演の好材料となる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>連立の核心は依然「議員定数削減」</strong>　自民・維新連立の看板政策である衆院議員定数削減（現行465議席の1割・45議席以上を削減し「420議席を超えない範囲」が目標）は、選挙制度改革と一体の2段階方式で進める方針だが調整は難航している。維新が改革停滞に不満を強めれば連立の緊張が高まり、与党勢力図と政策の予見可能性に影響しうる。皇室典範改正のような超党派協調案件と、定数削減・減税のような対立案件が会期末に同居する構図を押さえると、連立政治の力学を立体的に説明できる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>会期末（7月17日）に向けた論点の集中</strong>　皇室典範改正、給付付き税額控除の中間取りまとめ、食料品消費税減税の最終判断、補正予算、議員定数削減が同時並行で動いている。多党化した国会で与党が論戦の主導権を握りにくいなか、政権は協調しやすい案件を先行させ実績を積む戦術をとる。これらの決着順序と内容を追うことで、日本の連立政治の政策決定プロセスを具体的に解説できる。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.jiji.com/jc/article?k=2026061000848&g=pol" target="_blank" rel="noopener">皇族確保「総意」、高市首相に報告 女性身分保持・旧宮家養子案―衆参議長が取りまとめ：時事ドットコム</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA094XF0Z00C26A6000000/" target="_blank" rel="noopener">皇族数確保へ国会「総意」、皇室典範の改正案作成へ 旧宮家から養子｜日本経済新聞</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015147841000" target="_blank" rel="noopener">安定的な皇位継承 男系男子の養子案 法整備のあり方論点に｜NHKニュース</a></li>
+<li><a href="https://www.tokyo-np.co.jp/article/494224" target="_blank" rel="noopener">養子縁組対象に挙がる「旧宮家」、天皇家との関係は？：東京新聞デジタル</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA2615C0W5A221C2000000/" target="_blank" rel="noopener">給付付き税額控除、政府・与野党が国民会議 26年中に設計めざす｜日本経済新聞</a></li>
+<li><a href="https://taxlabor.com/kyufutsuki-zeigaku-kojo-2026/" target="_blank" rel="noopener">給付付き税額控除【2026年5月最新】給付のみ先行・税額控除は当面見送り・6月中間取りまとめ｜税理士が解説</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026050400264&g=pol" target="_blank" rel="noopener">自民グループが活発化 人事・総裁選視野に：時事ドットコム</a></li>
+<li><a href="https://news.tnc.co.jp/news/articles/NID2026042330102" target="_blank" rel="noopener">【鈴木哲夫さん解説】自民党"派閥回帰"は「高市おろし」のサインか 2027年の総裁選へ｜福岡TNCニュース</a></li>
+<li><a href="https://news.yahoo.co.jp/articles/0ada16e97f05d388a396f19e634c743d6b2d61fb" target="_blank" rel="noopener">高市政権支える自民グループ「一軍」争い、「麻生派ばかりがいい思いをするのはおかしい」対抗心｜読売新聞オンライン</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA186F30Y6A610C2000000/" target="_blank" rel="noopener">高市内閣の支持率54%、発足後最低 時事通信世論調査｜日本経済新聞</a></li>
+<li><a href="https://go2senkyo.com/articles/2026/06/02/136609.html" target="_blank" rel="noopener">若年層離れが顕著！高支持率維持の影で高市内閣支持層に起きている地殻変動とは？｜選挙ドットコム</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA145FJ0U6A510C2000000/" target="_blank" rel="noopener">食品の消費税減税「1%かゼロか」 高市首相、6月にも判断へ｜日本経済新聞</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA22BDG0S6A520C2000000/" target="_blank" rel="noopener">高市首相、補正予算関連の発言を一転 「不要→必要」中東対応理由に｜日本経済新聞</a></li>
+<li><a href="https://www.kantei.go.jp/jp/105/statement/2026/0525kaiken.html" target="_blank" rel="noopener">中東情勢を踏まえた令和８年度補正予算等についての会見｜首相官邸</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA1611L0W5A211C2000000/" target="_blank" rel="noopener">自民・維新、定数削減法案を通常国会に先送り 連立の火種くすぶる｜日本経済新聞</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年6月22日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
