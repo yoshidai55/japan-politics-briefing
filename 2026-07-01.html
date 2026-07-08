@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年7月1日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年7月1日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年7月1日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    高市政権が初めての「骨太の方針」案を6月30日にまとめ、2027年度を「責任ある積極財政元年」と位置づけて複数年度予算や上限なき投資枠を打ち出した。一方、国会は衆院定数削減法案の審議入りを与党が強行し、野党5党が全法案の審議を拒否する異常事態に突入。7月17日の会期末を前に国会は麻痺状態となり、会期延長論もくすぶる。高市首相の「中傷動画問題」も答弁回避が続き、与野党対立に拍車をかけている。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">高市政権初の「骨太の方針」案 ...</a></li><li><a href="#topic2">衆院定数削減法案、与党が審議入...</a></li><li><a href="#topic3">会期末7月17日迫る ― 会期...</a></li><li><a href="#topic4">高市首相「中傷動画問題」 ― ...</a></li><li><a href="#topic5">円安162円、約39年ぶり安値...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">高市政権初の「骨太の方針」案 ―「責任ある積極財政元年」へ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>政府は6月30日の経済財政諮問会議で、高市政権として初めてとなる経済財政運営の指針「骨太の方針」案を示した。2027年度を「責任ある積極財政元年」と位置づけ、政策転換を宣言。7月中の閣議決定を目指す。予算編成を根本的に見直して一部事業を複数年度で進めるほか、各省庁からの予算要求に上限を設けない「『強く豊かな日本』投資枠」を新設。2040年度までの「中長期経済財政計画」を策定し、名目3％超・実質1％超の成長を目標に掲げる方針だ。高市首相は「長年にわたる投資不足の流れを断ち切り、世界的な産業政策の大競争時代に対応していく」と述べた。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市早苗首相は2025年10月の政権発足以来、「責任ある積極財政」を旗印に掲げてきた。従来の骨太の方針が財政健全化（プライマリーバランス黒字化）を軸に据えてきたのに対し、今回の案は投資と成長を前面に押し出す明確な路線転換となる。自民党の小林政調会長は「高市カラーを全面に」と策定に臨んでおり、党の政策方針も積極財政へ傾斜している。夏には成長戦略・消費税減税・給付付き税額控除の方向性など、政権の重要判断が集中する見通しだ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>上限なき投資枠と複数年度予算は、機動的な財政出動を可能にする一方、財政規律の緩みへの懸念を招く。約122兆円という過去最大の当初予算に続く積極財政路線は、円安・金利・国債市場への影響を通じて市場の警戒を強める可能性がある。講演では「財政健全化から成長投資へ」という日本の政策思想の転換点として押さえておきたい論点だ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">衆院定数削減法案、与党が審議入りを強行 ― 野党5党が全面審議拒否</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民党と日本維新の会が共同提出した衆院議員の定数削減法案が、6月29日に衆院政治改革特別委員会で趣旨説明を経て審議入りした。立憲民主党など野党5党が欠席する中、与党が委員長職権で審議を進める「強行」となった。野党5党は衆参両院で全ての法案審議と日程協議に応じない方針を打ち出し、国会は事実上の麻痺状態に陥っている。法案は、議長の下に設ける与野党協議機関で1年以内に結論が出なければ比例代表を自動的に45削減する内容だ。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数削減は、2025年秋に成立した自民・維新連立の目玉政策であり、維新が連立参加の条件として強く求めてきた。3月の党首会談で今国会での成立方針を確認し、高市首相は比例のみで定数1割削減を指示。6月11日には自民・維新それぞれの党内手続きで比例45削減の法案を了承した。ただし自民党内には削減規模や1年後の自動削減規定に慎重論が根強く、連立の「火種」となってきた経緯がある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減は直接の経済政策ではないが、連立の結束力と政権の国会運営能力を測る試金石となる。強行採決路線が野党の全面反発を招いたことで、他の重要法案の停滞という「機会費用」が生じている。維新の看板政策を通すために与党が国会正常化を犠牲にする構図は、連立政権の優先順位と体力を示すものとして注目される。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">会期末7月17日迫る ― 会期延長論と皇室典範改正への影響</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>通常国会の会期末が7月17日に迫る中、与党が定数削減法案と「副首都構想」関連法案の審議入りを委員長職権で決めたことに野党が反発し、与野党対立が激化している。野党の審議拒否により、政府・与党が会期内成立を目指していた皇室典範改正案など他の重要法案の審議にも影響が及ぶ可能性がある。国会正常化の見通しは立たず、政府・与党内には会期延長論がくすぶっている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>会期末を前にした与野党攻防は例年みられる光景だが、今国会は定数削減という制度改革の根幹に関わる争点が絡み、対立が先鋭化している。加えて高市首相をめぐる「中傷動画問題」も野党の攻勢材料となり、審議拒否の口実を与えた形だ。読売新聞の報道では、自民ベテランが「先が見通せず打開策がない」と述べるなど、与党内にも手詰まり感が漂う。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>会期延長は政権の時間とコストを消耗させ、夏に控える骨太の方針の実行や成長戦略の具体化に影響しかねない。皇室典範改正のような超党派的合意が求められる案件が政局の巻き添えになれば、制度整備の遅れという長期的な副作用を残す。国会の機能不全は、政策実現力そのものへの市場・世論の評価に直結する論点だ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">高市首相「中傷動画問題」 ― 答弁回避で与野党対立に拍車</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市首相の陣営が、2025年秋の自民党総裁選や2026年2月の総選挙でライバル候補や野党を標的とした誹謗中傷動画を「1日100〜200本」作成・拡散していたとする「週刊文春」の報道が続いている。6月5日の参院予算委で高市首相は秘書がオンライン会議を持っていたことを認め、動画制作者と無関係だとした従来の説明を修正した。しかし核心部分の答弁は避け続けており、野党は「首相の資格が問われる」と追及を強めている。危機管理の専門家からは対応の「致命的な過ち」を指摘する声も出ている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>問題の発端は4月末の文春報道で、総裁選中に小泉進次郎氏や林芳正氏らを標的にした中傷動画が組織的に作られたとされる。動画作戦は主に木下秘書が担い、一部の制作・拡散が外部に委託されていたとの証拠メールやZoom会議の音声も報じられた。政権の正統性に関わるスキャンダルであり、就任から日が浅い高市政権にとって説明責任が重くのしかかる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>スキャンダルそのものは経済に直接影響しないが、政権の求心力低下は政策実行力を削ぐ。野党が審議拒否の材料として活用することで、骨太の方針や定数削減など重要案件の停滞を招いている。政権支持率の動向次第では、夏以降の政局・解散判断にも影を落とす可能性があり、政治リスクとして注視すべきテーマだ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">円安162円、約39年ぶり安値 ― 電気・ガス料金支援スタート</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>6月30日、ドル円相場が「抵抗ライン」とされる162円を突破し、約39年ぶりの円安水準を記録した。政府は中東情勢を踏まえた物価対策として、7月から9月にかけて電気・ガス料金への支援を実施。家庭用電気料金では7月に1キロワットアワー当たり3.5円を補助し、標準世帯で3カ月あわせて約5,000円程度の負担軽減を見込む。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市政権は積極財政・金融緩和的な姿勢を維持しており、市場では日米金利差の拡大観測から円売りが続いている。円安を明確に止めにいかない政権のスタンスが、輸入物価の上昇圧力とあいまって家計を圧迫している。エネルギー価格支援は当面の緩和策だが、根本的な円安要因への対応ではない点が課題として指摘される。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>円安は輸出企業や訪日消費には追い風だが、エネルギー・食料など輸入依存度の高い分野では家計と中小企業のコストを押し上げる。積極財政と円安・物価高という組み合わせは、政権が「成長」と「暮らしの安定」をどう両立させるかという根本的な政策トレードオフを突きつける。骨太の方針の実効性を評価するうえでも、為替と物価の動向は欠かせない補助線となる。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>「財政健全化」から「成長投資」への路線転換</strong>　高市政権の骨太の方針は、プライマリーバランス黒字化を軸としてきた従来路線からの明確な転換点。「責任ある積極財政元年」「上限なき投資枠」というキーワードは、日本の財政思想の変化を象徴するフレーズとして講演で使える。ただし財政規律・円安・国債市場への副作用という「もう一方の物語」もセットで語ると説得力が増す。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>連立の看板政策が国会を止める逆説</strong>　維新が連立参加の条件とした定数削減法案の強行が、野党の全面審議拒否を招き、皇室典範改正など他法案まで巻き込んで国会を麻痺させている。「連立の結束を優先した結果、政権の国会運営全体が滞る」という逆説は、連立政治のコスト構造を示す好例だ。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>政治リスクとしてのスキャンダル</strong>　中傷動画問題は経済に直接効かないが、答弁回避による求心力低下→審議停滞→政策実行の遅れという連鎖で間接的な経済コストを生む。政局・スキャンダルを「政策実行力への影響」という補助線で読み解く視点は、ビジネス聴衆に響きやすい。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.nikkei.com/article/DGXZQOUA2239P0S6A520C2000000/" target="_blank" rel="noopener">高市政権の判断、夏に集中 成長戦略・消費税減税・骨太の方針（日本経済新聞）</a></li>
+<li><a href="https://news.yahoo.co.jp/articles/5583515b34f23b6a639bab11986d5e1612cb4cc9" target="_blank" rel="noopener">骨太方針「積極財政」に転換 高市政権で初、複数年度予算も（共同通信／Yahoo!ニュース）</a></li>
+<li><a href="https://news.yahoo.co.jp/articles/da6fe07306b4c2e9ce33014b17b53273c048641d" target="_blank" rel="noopener">高市政権初の「骨太の方針」、石油の供給源多角化など明記へ（読売新聞オンライン／Yahoo!ニュース）</a></li>
+<li><a href="https://www.jimin.jp/news/information/213640.html" target="_blank" rel="noopener">小林政調会長「高市カラーを全面に」骨太の方針策定へキックオフ（自由民主党）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA114780R10C26A6000000/" target="_blank" rel="noopener">自民合同会議、衆院定数「比例45削減」法案を了承（日本経済新聞）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015161771000" target="_blank" rel="noopener">定数削減法案 与党職権で審議入り 野党応じない方針で対立（NHK）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015163751000" target="_blank" rel="noopener">衆院議員定数削減法案 野党欠席の中 政治改革特別委で審議入り（NHK）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026062900621&g=pol" target="_blank" rel="noopener">定数削減法案の審議入り強行 与党、国会正常化見通せず（時事ドットコム）</a></li>
+<li><a href="https://topics.smt.docomo.ne.jp/amp/article/yomiuri/politics/20260627-567-GYT1T00278" target="_blank" rel="noopener">野党が全法案審議に応じない方針、国会が緊迫化（読売新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA292B10Z20C26A6000000/" target="_blank" rel="noopener">政府・与党にくすぶる会期延長論 定数削減法案で与野党対立（日本経済新聞）</a></li>
+<li><a href="https://bunshun.jp/articles/-/89202" target="_blank" rel="noopener">高市早苗首相が核心部分の答弁を避け続ける「中傷動画問題」とは？（文春オンライン）</a></li>
+<li><a href="https://news.yahoo.co.jp/articles/08d76b01fb183a775d368a79b7a7bb170461e167" target="_blank" rel="noopener">「怒りを露わに」高市総理の中傷動画対応“致命的な過ち”（デイリー新潮／Yahoo!ニュース）</a></li>
+<li><a href="https://s-bi.com/wp_diary/kou/2026/07/01/post-89708.html" target="_blank" rel="noopener">なぜ高市政権は円安を止めないのか？（札幌美容形成外科・時事解説）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年7月1日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
