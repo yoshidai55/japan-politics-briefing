@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年6月25日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年6月25日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年6月25日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    会期末（7月17日）まで3週間あまり、高市政権は重要法案の処理と「連立の宿題」をにらみながら、外交・追悼日程をこなしている。高市早苗首相は6月23日の沖縄「慰霊の日」に就任後初めて沖縄を訪れ、全戦没者追悼式で「平和な世の中へ不断の努力」と述べたが、あいさつ中は「戦争反対」「9条守れ」のヤジが続き、保守色の強い政権と沖縄の距離感が改めて浮き彫りになった。国会では、自民・維新連立の核心である衆院比例代表「45減」をめぐる定数削減論議が大詰めを迎え、野党は「ゲリマンダー」と強く反発している。経済政策では、減税と給付を組み合わせる「給付付き税額控除」が6月17日に中間取りまとめの方向を固め、「給付先行」で2027年度実施をめざす姿が固まりつつある。内閣支持率は共同通信で55.8％、時事で54.3％となお高水準を保つ。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">高市首相、就任後初の沖縄訪問　...</a></li><li><a href="#topic2">議員定数削減「比例45減」で自...</a></li><li><a href="#topic3">給付付き税額控除、6月中間取り...</a></li><li><a href="#topic4">自民党の「派閥回帰」　麻生派の...</a></li><li><a href="#topic5">補正予算成立と会期末の国会運営...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">高市首相、就任後初の沖縄訪問　慰霊の日追悼式でヤジ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市早苗首相は2026年6月23日、沖縄県の「慰霊の日」に合わせて糸満市の平和祈念公園を訪れ、沖縄全戦没者追悼式に出席した。高市首相の来県は就任後初めてで、あいさつでは「日本人の誰もが平和で心豊かに暮らせる世の中を実現するため、不断の努力を重ねる」と述べた。式典では玉城デニー知事が平和宣言を読み上げる一方、首相のあいさつ中は「戦争反対」「9条守れ」などのヤジが飛び続けた。首相は式後の取材に「私自身が喋っているので、何をおっしゃっているのか聞こえたわけではない」と説明。基地負担が集中する現状に触れ、「駐留軍用地跡地の有効利用を進める」との考えも示した。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>「慰霊の日」は沖縄戦の組織的戦闘が終結したとされる日で、毎年首相が追悼式に出席するのが通例だが、高市首相は安全保障で対中抑止や防衛力強化を重視する保守的立場として知られ、沖縄の基地負担軽減を求める世論との間に緊張がある。あいさつ中のヤジは、辺野古移設や安保政策をめぐる政権と県側の溝を映したものといえる。就任後初訪問を慰霊の日に合わせた点には、対立を抱えつつも沖縄との関係構築を急ぎたい政権側の姿勢も読み取れる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>沖縄問題は安全保障と地域経済（基地経済・跡地利用・観光）が交差するテーマである。首相が言及した「駐留軍用地跡地の有効利用」は、返還跡地の再開発や産業誘致と直結し、沖縄振興予算の使途や民間投資の呼び込みに関わる。講演では「保守政権下の安全保障と地域経済の両立」という切り口で、政権が抱えるジレンマを論じる素材になる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">議員定数削減「比例45減」で自民・維新が調整　野党は強く反発</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民・維新連立の柱である衆院議員定数の1割削減をめぐり、高市首相は6月4日、比例代表の45議席を削減対象とする方向で調整するよう鈴木俊一幹事長に指示した。「比例45減」は日本維新の会が主張してきた案で、自民党の会合でも容認論が多かった。自民党は政治制度改革本部を中心に連立合意の実行へ協議を続けているが、定数削減は選挙制度改革とセットで進める「2段階方式」とされ、結論は通常国会以降に先送りされた経緯がある。野党は比例45減について「自民・維新に有利な事実上のゲリマンダーだ」と反発し、行政府の長である首相が一方的に削減幅を指示することにも違和感を示している。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数1割削減は維新が連立参加の「条件」として強く求め、連立合意に明記された看板政策である。両党は昨年の臨時国会に「小選挙区25・比例20」削減法案を提出したが、1月の衆院解散で廃案となり、その後維新は比例45減を前面に掲げてきた。比例削減は中小政党ほど議席を失いやすく、国民民主党や公明党、立憲民主党などが「選挙制度改革と一体で議論すべきだ」と慎重姿勢を崩していない。維新にとっては連立の成果を示す試金石であり、合意の解釈をめぐる自民とのズレが連立の火種としてくすぶっている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減そのものは直接の経済政策ではないが、連立の安定度を測る最重要指標であり、これが難航すれば高市カラーの政策（安全保障、エネルギー、財政）の推進力にも影を落とす。逆に難関を越えれば「雨降って地固まる」で連立の結束が強まるとの見方もある。企業・市場にとっては、政権の持続性と政策実行力を占う材料であり、定数論議の帰趨は政局リスクの織り込みに直結する。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">給付付き税額控除、6月中間取りまとめ　「給付一本化」で2027年度実施めざす</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>減税と現金給付を組み合わせる「給付付き税額控除」をめぐり、政府・与野党が設けた実務者会議は2026年6月17日の第15回会合で、議長が「とりまとめの方向性（議長案）」を提示した。方向性は、（1）低中所得者への支援を目的とする、（2）「年収の壁」への対応を組み込む、（3）「給付＋税額控除」ではなく当面は「給付」に一本化する――の3点に整理された。対象は「中低所得の現役勤労者」を軸に、会社員・パート・アルバイトに加え、自営業者・フリーランス、働く中低所得の高齢者も含む方向で、子育て世帯への加算や所得上限の引き上げも検討される。2027年度の導入を目標に、6月中の中間取りまとめを経て、秋の臨時国会への法案提出をめざす。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>給付付き税額控除は、消費税減税論と物価高対策の「落としどころ」を探る制度として与野党が共同で検討してきた。所得税額を控除し、控除しきれない低所得層には不足分を現金給付する仕組みだが、マイナンバーと公金受取口座の連携など実務が複雑なため、まず「給付」を先行させて制度を立ち上げる現実路線が選ばれた。飲食料品の消費税の取り扱いを「つなぎ」としてどうするかも論点で、財源面で密接に絡む。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>給付付き税額控除は、低所得層への再分配を税と給付の両面で行う仕組みで、定着すれば日本の社会保障・税制の設計思想を変えうる。「年収の壁」を対象に含めたことで、パート・アルバイトの就労調整を緩和し、労働供給を押し上げる効果も期待される。企業の人事・賃金担当にとっては、手取りや働き方に影響する制度であり、設計の詳細を注視する必要がある。2027年度実施を軸に、秋の臨時国会での法案化が次の節目となる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">自民党の「派閥回帰」　麻生派の突出と2027年総裁選にらむ党内力学</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>派閥解散後の自民党で、旧派閥が定例会合を続けたり、「政策グループ」を名乗る事実上の派閥が新設されたりする「グループ回帰」が進んでいる。政治資金問題を受けた派閥解散後も唯一存続する麻生派は、2月の衆院選後に急速に勢力を拡大し、地方議員の取り込みでも突出している。一方、麻生太郎副総裁や小泉進次郎防衛相らが発起人となり、高市首相を支える議員連盟を発足させる動きも出ており、2027年秋の総裁選での再選を見据えた党内基盤固めが水面下で進む。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市首相の自民党総裁としての任期は2027年9月までで、現時点で明確な「ポスト高市」は見えないが、人事と次期総裁選をにらんだグループ形成が早くも活発化している。昨秋の総裁選で高市氏は決選投票で麻生派や党員票の後押しを受けて競り勝った経緯があり、麻生派の動向は政権の安定と次期総裁選の双方を左右する。首相側は派閥色の強い動きに神経をとがらせており、「数の力」を誇示するグループと官邸の間に微妙な緊張がある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>党内力学は、減税・財政出動・エネルギーといった高市政権の重点政策がどこまで実行できるかを左右する。総裁再選を支える議連が機能すれば政権の求心力は高まるが、麻生派の突出が強まれば人事や政策で配慮を迫られ、機動的な意思決定が鈍るリスクもある。市場や企業にとっては、政権の持続性と政策の予見可能性を測るうえで、党内グループの再編は見逃せない指標である。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">補正予算成立と会期末の国会運営　中東対応予備費・国民投票法案</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>2026年度補正予算は6月5日、参院本会議で与党と国民民主党、チームみらいの賛成多数で可決・成立した。一般会計の歳出総額は3兆1135億円で、新設の「中東情勢等対応予備費」に2兆5000億円、電気・ガス料金支援に充てる一般予備費の補填に5135億円を計上。ガソリン補助金の財源積み増しや電気・ガス料金支援の継続が柱だ。国会では会期末（7月17日）まで1カ月を切り、与野党の法案調整が本格化。憲法改正の手続きを定める国民投票法改正案は6月19日に自民党などの賛成で衆院を通過し、今国会成立の見通しとなっている。皇室典範改正案など与野党が協調しやすい法案の処理も焦点だ。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市首相は当初、補正予算について慎重な姿勢を見せていたが、中東情勢の緊迫を理由に「不要」から「必要」へと転じ、3兆円強の編成に踏み切った。中東リスクは原油価格やガソリン・電気料金に直結するため、「予備費」という機動的な枠組みで備える形を取った。財政の信頼性維持と歳出規律の両立をどう図るかは、財務相に女性として初めて起用された片山さつき氏のもとでの課題でもある。会期末に向けては、対立の激しい定数削減を抱えつつ、皇室典範改正や国民投票法など超党派で進めやすいテーマを先行処理し、国会運営の実績を積む戦略がうかがえる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>中東情勢等対応予備費は、エネルギー価格の急変動に対する政府のバッファーであり、家計の負担軽減と物価安定に直結する。一方で巨額の予備費は使途の透明性や財政規律の観点から議論を呼びやすく、「金利ある世界」での財政運営の信認に関わる。日銀が政策金利を1％に引き上げた局面で、財政と金融の整合性をどう保つかは、企業・投資家にとって最重要の論点である。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>保守政権と沖縄の距離感</strong>　高市首相の就任後初の沖縄訪問とヤジは、安全保障重視の保守政権と基地負担軽減を求める地域世論の溝を象徴する。跡地利用など「安全保障と地域経済の両立」は、講演で政権のジレンマを語る格好の素材になる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>連立の試金石は「定数削減」</strong>　比例45減をめぐる自民・維新の調整は、連立の安定度と高市政権の政策実行力を測る最重要指標。難関を越えれば結束が強まり、つまずけば政局リスクが高まる二面性を押さえておきたい。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>再分配の新しい設計図</strong>　給付付き税額控除の「給付一本化・年収の壁対応」は、税と給付による再分配の思想転換であり、労働供給や手取りに影響する。2027年度実施と秋の臨時国会での法案化が、経済・人事の両面で次の節目となる。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.okinawatimes.co.jp/articles/-/1864906" target="_blank" rel="noopener">【全文】高市首相、就任後初の沖縄訪問 慰霊の日追悼式で「平和な世の中へ不断の努力」 あいさつ中ヤジも（沖縄タイムス）</a></li>
+<li><a href="https://www.okinawatimes.co.jp/articles/-/1865149" target="_blank" rel="noopener">高市首相、沖縄戦没者追悼式のヤジに言及「聞こえたわけではないが…」（沖縄タイムス）</a></li>
+<li><a href="https://ryukyushimpo.jp/news/entry-5331954.html" target="_blank" rel="noopener">沖縄の祈り、慰霊の日2026ドキュメント 平和の詩、高市首相にヤジ、デニー知事の平和宣言（琉球新報）</a></li>
+<li><a href="https://www.kantei.go.jp/jp/105/statement/2026/0623kaiken.html" target="_blank" rel="noopener">令和８年沖縄全戦没者追悼式等についての会見（首相官邸）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026060400618&g=pol" target="_blank" rel="noopener">高市首相、衆院比例４５減を指示 自民幹事長に、容認論多く（時事ドットコム）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA0226J0S5A201C2000000/" target="_blank" rel="noopener">議員定数の「自動」削減、公選法改正が必須 高市首相は維立公に目配り（日本経済新聞）</a></li>
+<li><a href="https://www.jimin.jp/news/information/211913.html" target="_blank" rel="noopener">連立合意実行へ協議進める衆院議員定数削減で政治制度改革本部（自由民主党）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA182QW0Y5A011C2000000/" target="_blank" rel="noopener">自民党・維新連立に4つの火種 議員削減に異論、選挙区競合やパイプの細さ（日本経済新聞）</a></li>
+<li><a href="https://hojyokin-portal.jp/news/204" target="_blank" rel="noopener">「給付付き税額控除」最新イメージ公表 子育て世帯への加算や給付一本化の方針示す（補助金ポータル）</a></li>
+<li><a href="https://www.all-senmonka.jp/moneyizm/news/315047/" target="_blank" rel="noopener">給付付き税額控除って結局いくらもらえる？対象は？2026年の最新動向（MONEYIZM）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026020501111&g=pol" target="_blank" rel="noopener">自民麻生氏、派閥拡大へ奔走 元領袖、影響力維持に躍起（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026050700978&g=pol" target="_blank" rel="noopener">自民、高市首相支持議連発足へ 麻生氏ら、総裁再選見据え（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026060500100&g=pol" target="_blank" rel="noopener">補正予算が成立 中東対応で３．１兆円（時事ドットコム）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA197PI0Z10C26A6000000/" target="_blank" rel="noopener">国民投票法案が衆院通過 今国会で成立見通し（日本経済新聞）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015155921000" target="_blank" rel="noopener">国会会期末まで1か月切る 与野党 法案めぐる調整が本格化へ（NHK）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA211FH0R20C26A6000000/" target="_blank" rel="noopener">高市内閣の支持率55.8% 共同通信世論調査（日本経済新聞）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年6月25日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
