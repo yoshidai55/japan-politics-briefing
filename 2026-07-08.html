@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年7月8日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年7月8日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年7月8日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    会期末7月17日まで残り10日を切り、通常国会は「正常化」と「延長」の綱引きが最終局面に入った。7月6日の与野党合意で高市首相出席の集中審議・党首討論を今国会中に開くことが固まり、審議は再開へ動くが、政府提出の未成立法案は17本が残り、衆院再可決を念頭に最大60日規模の会期延長論が本格化している。並行して、看板政策の骨太の方針2026は7月中旬の閣議決定を、インテリジェンス改革の目玉である国家情報会議・国家情報局は7月末の始動を目指しており、政局の停滞と政策の前進が同時進行する局面だ。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">集中審議・党首討論の日程調整が...</a></li><li><a href="#topic2">会期末7月17日まで10日 ―...</a></li><li><a href="#topic3">定数削減法案 ― 「1年以内に...</a></li><li><a href="#topic4">骨太の方針2026、7月中旬の...</a></li><li><a href="#topic5">国家情報会議・国家情報局、7月...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">集中審議・党首討論の日程調整が最終局面 ― 国会正常化の実行段階へ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>7月6日に自民・立憲の参院国対委員長が高市首相出席の集中審議と党首討論を今国会中に開くことで合意したのを受け、具体的な日程調整が進んでいる。森英介衆院議長は与党側に、首相の衆院予算委集中審議への出席に向けた努力を求めた。高市首相は自民党の松山政司参院議員会長と会談し、「国会の求めがあれば出席し、誠実に答弁する方針は変わらない」との立場を重ねて確認した。会期末が迫るなかで、審議日程を具体的に詰められるかが焦点となっている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>6月末、与党が衆院定数削減法案や副首都構想関連法案の審議入りを委員長職権で強行したことに野党5党が反発し、国会は全法案の審議を拒否する異常事態に陥っていた。7月3日時点でも与党は野党が求める集中審議を「100%応じられない」と拒んでいたが、会期末に向けて未成立法案が積み上がる圧力のなか、6日に一転して歩み寄った。合意はしたものの、残り会期が限られるため、いつ・どの委員会で首相が答弁に立つかという実務的な調整が難航している。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>首相が集中審議・党首討論に応じることは国会正常化の前提だが、同時に首相自身が「中傷動画」疑惑などの追及の場に立つことを意味する。答弁の巧拙が政権の求心力を左右し、そこから政策実行のテンポにも影響が及ぶ。ビジネス聴衆には、「国会日程という制約が政策のスケジュールをどう縛るか」という政治の時間コストの観点で押さえておきたい論点だ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">会期末7月17日まで10日 ― 積み残し17法案と最大60日の延長論</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>2月18日召集の特別国会（当初会期7月17日まで）は会期末が目前に迫り、政府・与党内で会期延長論が本格化している。政府が今国会に提出した64法案のうち、防災庁設置法案や皇室典範改正案など17法案が未成立のまま残る。報道では、衆院での再可決も念頭に最大60日規模の大幅延長案が浮上し、首相が与党幹部に検討を打診したとされる。国会正常化で審議は再開に向かうものの、残る会期だけで全法案を処理するのは難しいとの見方が強い。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>特別国会の会期延長は2回まで可能で、与党は皇室典範改正案（皇族数確保）に加え、衆院定数削減法案の成立にもこだわる姿勢を崩していない。積み残しには副首都構想関連法案など「高市カラー」の案件が並び、いずれも会期内成立が綱渡りの状況だ。延長は与党の国会運営負担を長期化させる一方、看板政策を取りこぼせば連立の結束に響くというジレンマを抱える。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>会期延長は政権の時間と政治的エネルギーを消耗させ、夏に予定する政策実行を後ろ倒しにしかねない。国会が延長戦にもつれ込むほど、政策アジェンダの前進よりも政局対応に資源が割かれる。市場や産業界にとっては、規制緩和や予算関連法案の成立時期が読みにくくなる点が実務的なリスクとなる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">定数削減法案 ― 「1年以内に結論なければ比例45自動削減」規定が攻防の核心</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民・維新が共同提出した衆院定数削減法案は、6月29日に衆院政治改革特別委員会で趣旨説明が行われ、野党5党が欠席するなか審議入りが強行された。法案は、衆院議長の下に設ける与野党協議会で1年以内に結論が得られない場合、比例代表の定数を自動的に45削減するという内容だ。衆参の野党国対委員長は採決を認めない方針を確認しており、会期末に向けて法案の扱いが最大の火種となっている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数削減は2025年秋発足の自民・維新連立の目玉政策で、維新が連立参加の条件として強く求めてきた。目標は現行465の衆院定数を1割削減し、比例中心に45以上を減らす内容だ。維新は会期内成立に強くこだわり、間に合わなければ会期延長を求める構えを崩さない。一方、自民党内には削減規模や「自動削減規定」への慎重論が根強く、連立の不協和音として繰り返し表面化してきた。強行的な審議入りが野党の審議拒否を招き、国会停滞の直接の引き金にもなった。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減自体は直接の経済政策ではないが、連立の結束力と政権の国会運営能力を測る試金石となる。維新の看板政策を通すために与党が国会の停滞を招く構図は、連立政治における「優先順位のコスト」を示す好例だ。講演では、少数の連立パートナーが政権全体のアジェンダをどこまで規定できるか、という連立ガバナンスの論点として整理すると分かりやすい。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">骨太の方針2026、7月中旬の閣議決定へ ― 「責任ある積極財政」と370兆円投資</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>政府は6月30日の経済財政諮問会議で骨太の方針2026（原案）を提示し、7月中旬の閣議決定を目指して調整を進めている。原案は「危機管理投資」と「成長投資」を柱に、AI・半導体、量子、防衛産業、創薬・先端医療など17の戦略分野へ官民投資を集中させ、2040年度までの累計投資額を370兆円超と見込む。2027年度を「責任ある積極財政元年」と位置づけ、複数年度予算や経費要求に上限を設けない投資枠の導入など、予算編成の枠組みそのものを見直す方針を打ち出した。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>例年6月中に決める骨太の方針が今年は7月にずれ込むのは、国会日程の混乱に加え、積極財政への転換という高市政権の政策色を反映した調整が続いているためだ。高市政権で初となる本格的な骨太の方針であり、財政規律を重んじる従来路線からの転換点として位置づけられる。プライマリーバランス（基礎的財政収支）目標の扱いや社会保険料負担のあり方も焦点となっている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>複数年度予算や上限なしの投資枠は、企業にとって中長期の官民連携や研究開発投資の予見性を高める一方、財政規律の緩みを懸念する声も根強い。370兆円という投資枠の実効性は制度設計と予算執行次第だが、17戦略分野に該当する産業には具体的な追い風となりうる。政局が停滞するなかでも政策の骨格が固まりつつある点は、政治リスクを評価するうえで見落とせない。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">国家情報会議・国家情報局、7月末に始動へ ― 高市政権のインテリジェンス改革が具体化</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>政府は、高市首相が看板政策に掲げるインテリジェンス改革の第1弾として、国家情報会議の初会合を7月末に開く方向で調整に入った。司令塔となる「国家情報局」も同月内に内閣官房へ設置する。設置法は5月27日に成立済みで、会議は首相が議長を務め、官房長官や外相、防衛相ら関係閣僚で構成。安全保障・テロや外国勢力の影響工作などについて調査・審議し、対処の基本方針を決定する。事務局の国家情報局は内閣情報調査室を改組し、700人規模で発足、トップの国家情報局長は国家安全保障局長と同格に位置づけられる。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>国家情報会議は高市政権が重視する安全保障・情報戦略の中核制度で、経済安全保障やサイバー、外国からの影響工作への対応強化を狙う。設置法は自民・維新・国民民主などの賛成多数で成立した経緯があり、野党内でも安保・情報分野では一定の協調が働いている。国会が政局で揺れる一方、こうした制度整備は着実に前進している点が対照的だ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>国家情報局の新設は、経済安全保障を重視する企業にとって政府の情報体制がどう強化されるかを示す。半導体や重要インフラ、先端技術を扱う産業では、政府のインテリジェンス機能の拡充がサプライチェーンや技術流出対策の議論と直結する。骨太の方針が掲げる「危機管理投資」とも思想的に地続きであり、安全保障と経済政策が一体化していく高市政権の方向性を象徴する動きだ。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>「正常化」と「延長」の同時進行が示す国会運営の力学</strong>　会期末が迫るなか、与党は集中審議・党首討論という追及の場を受け入れて審議を動かす一方、17本の積み残し法案を処理するため最大60日の会期延長も探る。この「譲歩と延長を組み合わせて時間を稼ぐ」構図を押さえると、日本の国会運営の駆け引きが立体的に語れる。ビジネスの交渉における譲歩と期限管理のアナロジーとしても使いやすい。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>政局の停滞と政策の前進は別レイヤーで動く</strong>　国会が定数削減法案や中傷動画疑惑で揺れる一方、骨太の方針2026は7月中旬の閣議決定、国家情報会議は7月末の始動へと着実に進む。表層の政局ニュースだけを追うと政策の実質的な前進を見落とす——「政局」と「政策」を分けて読む視点は、政治リスクを冷静に評価するフレームとして聴衆に響く。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>安全保障と経済政策の一体化という高市政権の方向性</strong>　370兆円の「危機管理投資・成長投資」を掲げる骨太の方針と、700人規模の国家情報局新設は、安全保障を経済戦略の中核に据える点で思想的に地続きだ。経済安全保障を重視する企業にとって、政府の投資枠と情報体制の拡充は事業環境を左右する。政権の政策哲学を一本の線でつなぐと、個別ニュースの意味が読み解きやすくなる。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://news.web.nhk/newsweb/na/na-k10015168411000" target="_blank" rel="noopener">国会 与党に会期延長論も 高市首相の意向踏まえ対応検討へ（NHK）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA292B10Z20C26A6000000/" target="_blank" rel="noopener">政府・与党にくすぶる会期延長論 定数削減法案で与野党対立、審議に遅れ（日本経済新聞）</a></li>
+<li><a href="https://www.policynews.jp/schedule/2026/007.html" target="_blank" rel="noopener">2026年7月の政治・政策カレンダー：特別国会が会期末、会期延長の報道、骨太の方針、国家情報会議と国家情報局が発足（KSI政策ニュース.jp）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA014JW0R00C26A7000000/" target="_blank" rel="noopener">高市首相、国会運営「求めあれば出席し誠実に答弁の方針変わらず」（日本経済新聞）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015169811000" target="_blank" rel="noopener">高市首相 自民 松山参院会長と会談 国会の求めあれば集中審議や党首討論出席する意向（NHK）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026062900621&g=pol" target="_blank" rel="noopener">定数削減法案の審議入り強行 与党、国会正常化見通せず（時事ドットコム）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015152421000" target="_blank" rel="noopener">自民 維新 衆院定数削減 比例のみ45議席削減の法案了承（NHK）</a></li>
+<li><a href="https://www.tokyo-np.co.jp/article/454898" target="_blank" rel="noopener">「定数削減法案」迫る時間切れ 早期実現にこだわる維新はイライラ（東京新聞デジタル）</a></li>
+<li><a href="https://civic-ai.xyz/articles/honebuto-2026" target="_blank" rel="noopener">骨太の方針2026の原案を要約 ― 投資枠370兆円・社会保険料・PB目標の3つの焦点（CIVIC AI）</a></li>
+<li><a href="https://www.projectdesign.jp/articles/news/d4c52e21-e138-4d4a-9bee-e0fe9caba33c" target="_blank" rel="noopener">【6月30日経済財政諮問会議詳報】政府、「骨太方針2026」原案提示 国内投資拡大で「強い経済」実現へ（事業構想オンライン）</a></li>
+<li><a href="https://www.okinawatimes.co.jp/articles/-/1870632" target="_blank" rel="noopener">骨太方針「積極財政」に転換 高市政権で初、複数年度予算も（沖縄タイムス）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA03AVY0T00C26A7000000/" target="_blank" rel="noopener">国家情報会議、7月末に初会合を調整 中長期の戦略策定へ（日本経済新聞）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026052700100&g=pol" target="_blank" rel="noopener">国家情報会議法が成立 ７月にも設置、活動強化（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2025122800158&g=pol" target="_blank" rel="noopener">「反高市」存在感薄く 派閥解散、高支持率で沈黙―自民（時事ドットコム）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年7月8日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
