@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年6月26日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年6月26日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年6月26日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    会期末（7月17日）まで3週間を切り、高市政権は連立パートナーの維新が掲げる看板法案の処理と党内・国会対応に追われている。焦点は、6月22日の与党党首会談で高市首相が吉村洋文・維新代表に修正を求めた「副首都」法案で、首相は大阪都構想の住民投票を「府全域」に広げる規定の削除を要請し、維新が党内調整を迫られている。皇室数確保をめぐっては国会の「立法府の総意」がまとまり、政府は皇室典範改正案を6月中の提出に向けて準備を急ぐ。経済面では、日銀が6月15・16日の会合で政策金利を1.0％へ引き上げ、31年ぶりの水準となるなか、財政と金融の整合性が高市政権の最大の論点となっている。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">「副首都」法案、高市首相が維新...</a></li><li><a href="#topic2">皇族数確保「立法府の総意」まと...</a></li><li><a href="#topic3">日銀、政策金利1.0％へ　31...</a></li><li><a href="#topic4">議員定数削減「比例45減」　自...</a></li><li><a href="#topic5">自民党の「派閥回帰」　麻生派の...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">「副首都」法案、高市首相が維新に修正要請　住民投票拡大規定の削除めぐり攻防</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市早苗首相は2026年6月22日、首相官邸で日本維新の会の吉村洋文代表と与党党首会談を行い、維新が今国会成立をめざす「副首都」法案について修正を要請した。首相は「都構想を含めた副首都構想を高く評価する」としつつ、「法案を成立させることが重要だ」と述べ、大阪都構想の住民投票を大阪府全域に拡大できるとする付則規定の削除を求めた。吉村氏は党内に諮る考えを示した。会談ではあわせて、皇族数確保に向けた皇室典範改正案と、衆院議員定数削減法案について今国会中の成立をめざす方針も確認された。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>「副首都」法案は、東京一極集中の是正を掲げる維新が連立参加にあたって重視する政策の一つで、大阪を「副首都」と位置づける構想と一体で進められてきた。吉村氏は2027年春の統一地方選と同時に都構想の住民投票を実施することを目指しており、投票対象を府全域に広げれば維新支持層からの賛成票を積み増せるとの狙いがあった。これに対し自民党内には、特定地域の制度設計を国の法律で後押しすることへの慎重論があり、首相は「法案を通す」ことを優先して争点となる付則の削除を求めた形だ。維新にとっては連立の成果を示す試金石であり、修正を受け入れるか否かは党内の対立を呼びうる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>副首都構想は、行政機能の分散や大阪・関西圏の経済活性化、首都直下地震など災害時のバックアップといった論点を含み、関西の不動産・インフラ投資や企業立地に中長期で影響しうるテーマである。法案の成否と修正の中身は、維新の地盤である関西の政策期待を左右する。講演では「連立政権下で地域政党の看板政策がどう国政に取り込まれ、どう薄まるか」という切り口で、連立の力学と地域経済を結びつけて論じる素材になる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">皇族数確保「立法府の総意」まとまる　政府は皇室典範改正案を6月中提出へ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>衆参両院の正副議長は6月10日、皇族数確保策をめぐり与野党13党派による全体会議を開き、国会提言となる「立法府の総意」を決定した。提言は、①女性皇族が結婚後も皇族の身分を保持する、②旧宮家の男系男子を養子として皇族に復帰させる――の2つの方策を柱とする。これを受けて政府は皇室典範の改正案など必要な法案の作成を急ぎ、6月中をめどに国会への提出を目指す方針だ。総意には自民党、日本維新の会、国民民主党、公明党、参政党、チームみらいなど7党派が了承した一方、立憲民主党は②に、日本保守党は①に賛同せず、共産党、れいわ新選組、社民党、参院会派「沖縄の風」は総意自体に反対した。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>安定的な皇位継承と皇族数の確保は、皇室典範特例法の付帯決議を受けて長年議論されてきた懸案で、政争になりやすいテーマだけに、衆参の議長のもとで超党派の合意形成が進められてきた。今回「立法府の総意」という形で大枠がまとまったことは、与野党が協調しやすい数少ない政策領域での前進といえる。ただし旧宮家の養子復帰には「世襲の範囲」をめぐる立憲などの異論が残り、女性皇族の身分保持には保守系からの慎重論もあるため、法案審議では条文の詰めをめぐり論点が再燃する可能性がある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>皇室制度は直接の経済政策ではないが、超党派で合意できるテーマを会期末に先行処理することは、対立の激しい定数削減などを抱える高市政権にとって国会運営の「実績づくり」となる。与野党協調の成立法案を積み上げることで、政権は安定運営をアピールでき、政局リスクの低下は市場の安心材料にもなる。講演では「対立法案と協調法案を仕分けて会期末をさばく国会運営術」という観点で、政権の議事戦略を解説できる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">日銀、政策金利1.0％へ　31年ぶり水準で「金利ある世界」と財政の整合性が焦点</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>日銀は6月15・16日の金融政策決定会合で、政策金利を0.25％引き上げて1.0％とすることを決めた。政策金利1.0％は1995年以来およそ31年ぶりの高水準となる。植田和男総裁が体調不良で欠席し氷見野良三副総裁が議長を務め、会見は内田真一副総裁が代行する異例の運営となった。採決では8人の政策委員のうち7人が利上げに賛成し、高市首相に近いとされる委員1人が反対した。物価高と円安への警戒が利上げを後押しした一方、利上げに慎重とされてきた高市政権は表立った反対姿勢を見せず、静観する形をとった。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市政権は発足以来、デフレ脱却と「成長型経済」への移行を重視し、性急な金融引き締めには慎重な立場をにじませてきた。城内実経済財政相は会合に先立ち「1％を超える金利に向けては、デフレに後戻りしない成長型経済へ変化しているかが重要だ」と述べ、追加利上げに条件を付ける形でけん制していた。それでも円安進行と輸入物価の上昇が家計を圧迫するなか、政権が公然と反対しにくい環境となり、日銀は利上げに踏み切った。反対票が政権の意向を映すとの見方もあり、今後の政策運営に火種を残している。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>政策金利1.0％は、住宅ローンや企業の借入コスト、国債の利払い費に直結する。中東情勢対応で3兆円規模の補正予算を赤字国債で賄った直後の利上げであり、「金利ある世界」での財政運営の信認が改めて問われる。財務相に女性として初めて就いた片山さつき氏のもとで、財政規律と成長重視をどう両立させるかは、企業・投資家にとって最重要の論点だ。講演では「市場が動かす政治」「金利ある政治の時代」という切り口で、金融正常化と高市財政のせめぎ合いを描ける。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">議員定数削減「比例45減」　自民・維新連立の宿題、会期末へ調整大詰め</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民・維新連立の柱である衆院議員定数の1割削減をめぐり、高市首相は比例代表45議席の削減を軸に調整を進めるよう党執行部に指示してきた。「比例45減」は維新が連立参加の条件として強く求めてきた案で、6月22日の党首会談でも今国会成立をめざす方針が確認された。自民党は政治制度改革本部を中心に連立合意の実行へ協議を続けているが、定数削減は選挙制度改革と一体で進める方針で、結論は通常国会以降にずれ込んだ経緯がある。野党は比例45減を「自民・維新に有利な事実上のゲリマンダーだ」と反発し、慎重姿勢を崩していない。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数1割削減は維新が連立合意に明記させた看板政策で、両党は昨年提出した削減法案が衆院解散で廃案となった後、維新は比例45減を前面に掲げてきた。比例代表の削減は中小政党ほど議席を失いやすく、国民民主党や公明党、立憲民主党が「選挙制度改革と一体で議論すべきだ」と難色を示している。維新にとっては連立の成果を示す試金石であり、合意の解釈をめぐる自民とのズレが「連立の火種」としてくすぶる。会期末が迫るなか、今国会で具体的な前進を示せるかが、連立の安定度を占う。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減そのものは直接の経済政策ではないが、連立の結束度を測る最重要指標であり、難航すれば安全保障・エネルギー・財政といった高市カラーの政策の推進力にも影響する。逆に難関を越えれば「雨降って地固まる」で連立が強固になるとの見方もある。企業・市場にとっては政権の持続性と政策実行力を占う材料であり、定数論議の帰趨は政局リスクの織り込みに直結する。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">自民党の「派閥回帰」　麻生派の突出と2027年総裁選にらむ党内力学</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>派閥解散後の自民党で、旧派閥が定例会合を続けたり、「政策グループ」を名乗る事実上の派閥が新設されたりする「グループ回帰」が進んでいる。政治資金問題を受けた派閥解散後も唯一存続する麻生派は、2月の衆院選後に勢力を拡大し、地方議員の取り込みでも突出している。一方で、高市首相を支える議員連盟を発足させる動きも出ており、2027年秋の総裁選での再選を見据えた党内基盤固めが水面下で進む。政治記者の間では、こうした派閥回帰を「高市おろし」の予兆と読む見方と、政権基盤の強化と読む見方が交錯している。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>高市首相の自民党総裁としての任期は2027年9月までで、現時点で明確な「ポスト高市」は見えないが、人事と次期総裁選をにらんだグループ形成が早くも活発化している。昨秋の総裁選で高市氏は決選投票で麻生派や党員票の後押しを受けて競り勝った経緯があり、麻生派の動向は政権の安定と次期総裁選の双方を左右する。高い内閣支持率を背景に「反高市」勢力は当面沈黙しているが、政策の具体論に入ると支持率に濃淡が出るため、長期的な統治の安定はなお不透明だ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>党内力学は、減税・財政出動・エネルギーといった高市政権の重点政策がどこまで実行できるかを左右する。総裁再選を支える議連が機能すれば政権の求心力は高まるが、麻生派の突出が強まれば人事や政策で配慮を迫られ、機動的な意思決定が鈍るリスクもある。市場や企業にとっては、政権の持続性と政策の予見可能性を測るうえで、党内グループの再編は見逃せない指標である。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>連立の看板法案は「通すために薄める」</strong>　副首都法案で高市首相が住民投票拡大規定の削除を求めたように、連立では維新の看板政策を「成立優先」で修正する力学が働く。地域政党の政策が国政でどう取り込まれ、どう骨抜きになるかは、連立政治を読み解く格好の題材になる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>協調法案と対立法案の仕分け</strong>　皇室典範改正のような超党派で進めやすいテーマを会期末に先行処理し、定数削減など対立の激しい案件と切り分けるのが政権の国会運営術。成立実績の積み上げは政局リスクを下げ、市場の安心材料にもなる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>「金利ある世界」と高市財政のせめぎ合い</strong>　政策金利1.0％は31年ぶりの水準で、補正予算を赤字国債で賄った直後の利上げだけに、財政と金融の整合性が問われる。成長重視の高市政権と正常化を進める日銀の距離感は、企業・投資家が最も注視すべき論点である。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.jiji.com/jc/article?k=2026062200605&g=pol" target="_blank" rel="noopener">与党「副首都」法案修正へ 「大阪都」構想の投票拡大削除（時事ドットコム）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA220YB0S6A620C2000000/" target="_blank" rel="noopener">高市首相、維新に副首都法案の修正要請 都構想「府全域で投票」削除（日本経済新聞）</a></li>
+<li><a href="https://www.kantei.go.jp/jp/105/statement/2026/0622kaiken.html" target="_blank" rel="noopener">与党党首会談についての会見（首相官邸）</a></li>
+<li><a href="https://www3.nhk.or.jp/news/html/20260622/k10015136501000.html" target="_blank" rel="noopener">維新 吉村代表「副首都」法案など“今の国会で成立図る”（NHK）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA094XF0Z00C26A6000000/" target="_blank" rel="noopener">皇族数確保へ国会「総意」、皇室典範の改正案作成へ 旧宮家から養子（日本経済新聞）</a></li>
+<li><a href="https://www3.nhk.or.jp/news/html/20260610/k10015146471000.html" target="_blank" rel="noopener">安定的な皇位継承 6月中めどに皇室典範改正案など提出目指す（NHK）</a></li>
+<li><a href="https://news.yahoo.co.jp/articles/f96818e335a21087c2d42694691c5520893b9531" target="_blank" rel="noopener">＜QAで解説＞皇族数の確保「立法府の総意」まとまる（毎日新聞）</a></li>
+<li><a href="https://www.dlri.co.jp/report/macro/623090.html" target="_blank" rel="noopener">政策金利1.00％への引き上げ ～2026年6月の日銀金融政策決定会合～（第一生命経済研究所）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUB023HG0S6A600C2000000/" target="_blank" rel="noopener">日銀、強まる6月利上げ論 物価高・円安リスクで政権も静観姿勢（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOFL25337TV20C26A5000000/" target="_blank" rel="noopener">日銀6月利上げ、高市首相は容認？ ノーヒントに市場深読み（日本経済新聞）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026060400618&g=pol" target="_blank" rel="noopener">高市首相、衆院比例４５減を指示 自民幹事長に、容認論多く（時事ドットコム）</a></li>
+<li><a href="https://www.jimin.jp/news/information/211913.html" target="_blank" rel="noopener">連立合意実行へ協議進める衆院議員定数削減で政治制度改革本部（自由民主党）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA182QW0Y5A011C2000000/" target="_blank" rel="noopener">自民党・維新連立に4つの火種 議員削減に異論、選挙区競合やパイプの細さ（日本経済新聞）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026020501111&g=pol" target="_blank" rel="noopener">自民麻生氏、派閥拡大へ奔走 元領袖、影響力維持に躍起（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2025122800158&g=pol" target="_blank" rel="noopener">「反高市」存在感薄く 派閥解散、高支持率で沈黙―自民（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026060500100&g=pol" target="_blank" rel="noopener">補正予算が成立 中東対応で３．１兆円（時事ドットコム）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年6月26日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
