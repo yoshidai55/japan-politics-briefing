@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年7月7日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年7月7日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年7月7日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    麻痺状態が続いていた国会が、7月6日の与野党合意で正常化に向けて動き出した。自民・立憲の参院国対委員長が、高市首相出席の党首討論と予算委集中審議を今国会中に開くことで合意し、立憲は中断していた政府提出法案の審議に応じる。ただし会期末7月17日まで残る積み残し法案は17本にのぼり、政府・与党内では最大60日の会期延長論が本格化。定数削減法案をめぐる自民・維新連立の火種、副首都構想法案、高市首相の「中傷動画」疑惑も引き続き政局の焦点となっている。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">国会正常化へ ― 党首討論・集...</a></li><li><a href="#topic2">会期末7月17日迫る ― 最大...</a></li><li><a href="#topic3">自民・維新連立の火種 ― 定数...</a></li><li><a href="#topic4">副首都構想法案、住民投票「大阪...</a></li><li><a href="#topic5">高市首相の「中傷動画」疑惑 ―...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">国会正常化へ ― 党首討論・集中審議を今国会中に開催で与野党合意</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民党と立憲民主党の両参院国対委員長が7月6日に国会内で会談し、高市早苗首相が出席する予算委員会の集中審議と党首討論を今国会中に開催することで合意した。これを受けて立憲側は、参院で中断していた政府提出法案の審議に応じる方針に転換。参院は正常化に向かう見通しとなった。高市首相はこれに先立ち「国会の求めがあれば出席し、誠実に答弁する方針は変わらない」と繰り返し表明していた。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>6月末以降、与党が衆院定数削減法案と副首都構想関連法案の審議入りを委員長職権で強行したことに野党5党が反発し、衆参両院で全法案の審議を拒否する異常事態が続いていた。野党は「中傷動画」疑惑での首相の答弁回避も追及材料とし、集中審議と党首討論の開催、首相秘書の参考人招致を要求してきた。会期末が迫り未成立法案が積み上がる中、与党側が野党の求めに応じる形で歩み寄り、膠着打開の糸口をつかんだ。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>国会正常化は、停滞していた政府提出法案の審議を再び動かす前提条件であり、政権の政策実行力に直結する。ただし「正常化」と引き換えに首相自身が集中審議・党首討論という追及の場に立つことになり、中傷動画疑惑をめぐる攻防が政権の求心力を左右する。ビジネス聴衆に対しては、国会の空転が政策のスケジュールにどう跳ね返るかという「政治の時間コスト」の観点で押さえておきたい局面だ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">会期末7月17日迫る ― 最大60日の会期延長論と積み残し17法案</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>通常国会の会期末7月17日を前に、政府・与党内で会期延長論が本格化している。報道によれば、衆院での再可決も念頭に最大60日規模の大幅延長案が浮上し、首相が与党幹部に検討を打診したとされる。与野党対立で審議が遅れ、政府が今国会での成立を目指す法案は17本が未成立のまま残っている。国会正常化の合意で審議は再開に向かうものの、残る会期だけで全法案を処理するのは難しいとの見方が強い。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>積み残し法案には、皇室典範改正案（皇族数確保）、副首都構想関連法案、衆院定数削減法案など、政権が重視する「高市カラー」の案件が並ぶ。とりわけ定数削減法案は連立を組む維新が会期内成立に強くこだわり、間に合わなければ会期延長を求める構えを崩していない。会期延長は与党にとって国会運営の負担を長期化させる一方、看板政策を取りこぼせば連立の結束に響くというジレンマがある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>会期延長は政権の時間と政治的エネルギーを消耗させ、夏に予定する骨太の方針の実行や成長戦略の具体化を後ろ倒しにしかねない。国会が延長戦にもつれ込むほど、政策アジェンダの前進よりも政局対応に資源が割かれる。市場や産業界にとっては、規制緩和や予算措置など経済関連法案の成立時期が読みにくくなる点が実務的なリスクとなる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">自民・維新連立の火種 ― 定数削減法案が会期末攻防の中心に</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民党と日本維新の会が共同提出した衆院議員の定数削減法案が、依然として与野党対立の中心にある。維新は連立合意に基づき会期内成立を強く求め、間に合わない場合は会期延長を要求する立場を維持。一方で野党は強行的な審議入りに反発してきた。国会正常化の合意で審議環境は改善に向かうが、法案の扱いをめぐる自民・維新と野党の攻防は続く見通しだ。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数削減は2025年秋に発足した自民・維新連立の目玉政策で、維新が連立参加の条件として強く求めてきた経緯がある。目標は現行465の衆院定数を「420を超えない範囲で1割削減」、すなわち比例中心に45以上を減らす内容だ。3月の党首会談で今国会成立方針を確認したものの、自民党内には削減規模や自動削減規定への慎重論が根強く、連立の「不協和音」として繰り返し表面化してきた。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減自体は直接の経済政策ではないが、連立の結束力と政権の国会運営能力を測る試金石となる。維新の看板政策を通すために与党が国会の停滞を招く構図は、連立政治における「優先順位のコスト」を示す好例だ。講演では、少数の連立パートナーが政権全体のアジェンダをどこまで規定できるか、という連立ガバナンスの論点として整理すると分かりやすい。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">副首都構想法案、住民投票「大阪市民限定」で決着し提出</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>維新が推進する副首都構想の関連法案「国家社会機能継続性確保施策及び副首都の整備に係る施策の推進に関する法律案」が、6月24日に衆議院へ提出された。焦点だった大阪都構想の住民投票規定は、当初案の「府全域で投票可能」とする付則を削除し、対象を大阪市民に限定する修正が加えられた。高市首相と維新の吉村洋文代表が6月22日に会談して修正を確認し、大阪維新の会も6月23日に修正案を了承した。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>当初、維新は都への名称変更や特別区設置の是非を問う住民投票を「府全域」で実施できる規定を盛り込もうとしたが、自民党内から「大阪市民以外も投票できる内容は憲法92条（地方自治）に抵触する」との異論が噴出した。連立を組む維新の悲願と、自民党内の憲法上の懸念との折り合いをつける形で、投票対象を大阪市民に限定する妥協が成立した。3度目の「都構想」住民投票をにらむ維新にとっては、法的枠組みを確保する一歩となる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>副首都構想は、首都機能のバックアップと大阪の統治機構改革という二つの側面を持つ。災害・有事に備えた国家機能の継続性という論点は、企業のBCP（事業継続計画）や地方分散の議論とも通じる。政策としての実効性は制度設計次第だが、連立与党が地域政党の看板政策を国政の法案に落とし込むプロセスとして、連立政治の力学を示す事例だ。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">高市首相の「中傷動画」疑惑 ― 集中審議で追及が本格化へ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>2025年の自民党総裁選をめぐり、高市首相の秘書から相談を受けたとされるIT会社代表が、対立候補を中傷する動画をAIで作成・投稿したと証言している問題で、野党の追及が続いている。高市首相は「他の候補者を誹謗中傷したことは決してない」「事務所が第三者に作成を依頼することはない」と関与を繰り返し否定。野党は首相秘書の参考人招致を重ねて求めており、今国会中に開催が決まった予算委集中審議と党首討論が新たな追及の舞台となる。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>この問題は6月以降、首相が核心部分の答弁を避け続けているとして「答弁拒否」との批判を招き、野党だけでなく国民民主党の玉木代表からも国会運営への苦言が出ていた。自民党は独自調査に踏み込まない姿勢を維持している。疑惑の追及は、野党が審議拒否に踏み切る一因ともなり、国会の停滞と密接に結びついてきた。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>スキャンダルそのものは経済に直接効かないが、首相の答弁回避が求心力の低下を招き、審議停滞から政策実行の遅れへと連鎖する間接的なコストを生む。集中審議での首相の対応次第で政権の体力が試される。政局・スキャンダルを「政策実行力への影響」という補助線で読み解く視点は、ビジネス聴衆にとって政治リスクを評価する実用的なフレームとなる。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>「空転」から「正常化」への転換点</strong>　6月末に麻痺した国会が7月6日の与野党合意で動き出した局面は、日本の国会運営の力学を示す好素材だ。与党が集中審議・党首討論という「追及の場」を受け入れる代わりに、野党が法案審議に復帰する——この取引構造を押さえると、国会の停滞と打開のメカニズムが立体的に語れる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>連立パートナーが政権アジェンダを規定するコスト</strong>　維新が求める定数削減法案の会期内成立が、会期延長論や国会攻防の中心に居座っている。少数の連立パートナーの看板政策が、政権全体の国会運営と時間配分を左右する——この「連立ガバナンスのコスト」は、ビジネスの意思決定における少数ステークホルダーの影響力とも重ねて説明できる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>政治の時間コストと政策スケジュール</strong>　会期延長論と17本の積み残し法案は、政局の停滞が経済関連法案の成立時期を不透明にすることを示す。規制緩和や予算措置の実現タイミングが読みにくくなる点は、産業界にとって実務的なリスクだ。「政治の時間」がビジネスのスケジュールにどう跳ね返るか、という視点で締めると聴衆に響きやすい。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://news.yahoo.co.jp/articles/41a1247f542d1eea6ace48f4af23eb3c6cd34431" target="_blank" rel="noopener">高市総理出席の党首討論と予算委員会の集中審議 今国会中の実施で合意（TBS NEWS DIG／Yahoo!ニュース）</a></li>
+<li><a href="https://www.tokyo-np.co.jp/article/499789" target="_blank" rel="noopener">高市首相「求めがあれば出席し答弁する」 予算委の集中審議と党首討論開催へ 参院は正常化の見通し（東京新聞デジタル）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA014JW0R00C26A7000000/" target="_blank" rel="noopener">高市首相、国会運営「求めあれば出席し誠実に答弁の方針変わらず」（日本経済新聞）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015169481000" target="_blank" rel="noopener">野党 集中審議開催を 政府与党 高市首相の意向踏まえ協議へ（NHK）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015169811000" target="_blank" rel="noopener">高市首相 自民 松山参院会長と会談 国会の求めあれば集中審議や党首討論出席する意向（NHK）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015168411000" target="_blank" rel="noopener">国会 与党に会期延長論も 高市首相の意向踏まえ対応検討へ（NHK）</a></li>
+<li><a href="https://www.hokkaido-np.co.jp/article/1330463/" target="_blank" rel="noopener">国会会期60日延長案浮上 首相が検討打診 衆院再可決念頭に（北海道新聞デジタル）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA292B10Z20C26A6000000/" target="_blank" rel="noopener">政府・与党にくすぶる会期延長論 定数削減法案で与野党対立、審議に遅れ（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA1611L0W5A211C2000000/" target="_blank" rel="noopener">自民・維新、定数削減法案を通常国会に先送り 連立の火種くすぶる（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA220YB0S6A620C2000000/" target="_blank" rel="noopener">高市首相、維新に副首都法案の修正要請 都構想「府全域で投票」削除（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUF233EK0T20C26A6000000/" target="_blank" rel="noopener">大阪維新、副首都法案の修正に賛同 3度目都構想も投票は大阪市民に（日本経済新聞）</a></li>
+<li><a href="https://o-ishin.jp/news/2026/06/24/18419.html" target="_blank" rel="noopener">副首都法案を衆議院に提出しました（日本維新の会）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026062200988&g=pol" target="_blank" rel="noopener">高市首相、中傷動画の追及かわす 答弁準備で「睡眠取れず」―野党反発、秘書招致を要求（時事ドットコム）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026060501060&g=pol" target="_blank" rel="noopener">「中傷動画」政権の火種に 苦しい首相答弁、野党攻勢（時事ドットコム）</a></li>
+<li><a href="https://www.bloomberg.com/jp/news/articles/2026-07-03/THLA5UT9NJLV00" target="_blank" rel="noopener">高市政権の新金融戦略案が判明、民間投資拡大へ銀行規制を広範に緩和（Bloomberg）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年7月7日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
