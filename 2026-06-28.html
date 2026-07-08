@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本政治ブリーフィング｜2026年6月28日</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+  :root {
+    --primary:#1a1a2e;--accent:#c0392b;--gold:#d4a017;
+    --bg:#f8f6f1;--card-bg:#fff;--text:#2c2c2c;
+    --text-light:#666;--border:#e0dbd0;--tag-bg:#f0ece3;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;font-size:15px}
+  header{background:var(--primary);color:white;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .header-inner{max-width:900px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}
+  .header-logo{font-family:'Noto Serif JP',serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:rgba(255,255,255,.7);text-transform:uppercase}
+  .header-date{font-size:13px;color:rgba(255,255,255,.55)}
+  .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);color:white;padding:56px 24px 48px;text-align:center}
+  .hero-eyebrow{font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:500}
+  .hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(22px,4vw,32px);font-weight:700;line-height:1.4;margin-bottom:12px}
+  .hero-date-badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 16px;font-size:12px;color:rgba(255,255,255,.7);margin-bottom:32px}
+  .summary-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-left:3px solid var(--gold);border-radius:6px;padding:20px 24px;max-width:700px;margin:0 auto;text-align:left;font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.88)}
+  .summary-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 60px}
+  .toc{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:20px 24px;margin-bottom:36px}
+  .toc-title{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light);margin-bottom:12px;font-weight:600}
+  .toc-list{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+  .toc-list a{display:inline-block;background:var(--tag-bg);color:var(--text);text-decoration:none;font-size:12px;padding:5px 12px;border-radius:4px;border:1px solid var(--border);transition:all .15s}
+  .toc-list a:hover{background:var(--primary);color:white;border-color:var(--primary)}
+  .topic-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;transition:box-shadow .2s}
+  .topic-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+  .topic-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent)}
+  .topic-number{font-size:11px;color:var(--accent);font-weight:700;letter-spacing:.1em;margin-bottom:6px}
+  .topic-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;line-height:1.4}
+  .fact-section,.context-section,.implication-section{margin-bottom:16px}
+  .section-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:8px}
+  .label-fact{background:#eef2ff;color:#3730a3}
+  .label-context{background:#f0fdf4;color:#166534}
+  .label-implication{background:#fffbeb;color:#92400e}
+  .fact-section p,.context-section p,.implication-section p{font-size:14.5px;line-height:1.85}
+  .points-card{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);border-radius:10px;padding:28px 32px;margin-bottom:24px;color:white}
+  .points-title{font-family:'Noto Serif JP',serif;font-size:16px;font-weight:700;color:var(--gold);margin-bottom:20px}
+  .point-item{display:flex;gap:14px;margin-bottom:16px;padding:16px;background:rgba(255,255,255,.06);border-radius:6px;border:1px solid rgba(255,255,255,.1)}
+  .point-num{flex-shrink:0;width:24px;height:24px;background:var(--gold);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;margin-top:2px}
+  .point-text{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88)}
+  .point-text strong{color:white;font-weight:600}
+  .sources-section{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:24px 32px;margin-bottom:24px}
+  .sources-title{font-size:13px;font-weight:700;letter-spacing:.1em;color:var(--text-light);text-transform:uppercase;margin-bottom:14px}
+  .source-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .source-list li::before{content:'→';color:var(--accent);margin-right:8px;font-size:12px}
+  .source-list a{color:#2563eb;text-decoration:none;font-size:13px;word-break:break-all}
+  .source-list a:hover{text-decoration:underline}
+  footer{background:var(--primary);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px}
+  @media(max-width:600px){.hero{padding:40px 16px 36px}.topic-card,.points-card,.sources-section{padding:20px 18px}main{padding:24px 14px 48px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="header-logo">日本政治ブリーフィング</div>
+    <div class="header-date">2026年6月28日</div>
+  </div>
+</header>
+<div class="hero">
+  <div class="hero-eyebrow">Japan Politics Daily Briefing</div>
+  <h1 class="hero-title">日本政治ブリーフィング</h1>
+  <div class="hero-date-badge">2026年6月28日</div>
+  <div class="summary-box">
+    <div class="summary-label">Today's Summary · 今日のひとことサマリー</div>
+    会期末（7月17日）まで3週間を切るなか、高市政権の体力を測る最新指標が出そろった。日経・テレビ東京が6月26〜28日に実施した世論調査で内閣支持率は68％となり、前週に共同通信が示した発足以来最低の55.8％から一転、高水準へ「持ち直し」の数字が出た。調査主体によって支持率の振れ幅が大きく、「中傷動画問題」の影響をどう読むかは評価が分かれる局面だ。一方で疑惑は暗号資産「サナエトークン」へと広がり、首相答弁と後援会の発信に食い違いも指摘されるなど、火種はくすぶり続けている。政策面では食料品消費税を2027年4月から2年限定で1％に下げる案が最終調整に入り、7月に持ち越した「骨太の方針2026」と並び、夏は経済政策の節目を迎える。
+  </div>
+</div>
+<main>
+  <nav class="toc">
+    <div class="toc-title">Topics</div>
+    <ul class="toc-list"><li><a href="#topic1">日経・テレ東調査で内閣支持率6...</a></li><li><a href="#topic2">疑惑は暗号資産「サナエトークン...</a></li><li><a href="#topic3">食料品消費税、2027年4月か...</a></li><li><a href="#topic4">「骨太の方針2026」は7月へ...</a></li><li><a href="#topic5">衆院定数「比例45減」法案、会...</a></li><li><a href="#topic6">自民党内で派閥の再結集　202...</a></li><li><a href="#points">ポイント</a></li></ul>
+  </nav>
+  
+  <div class="topic-card" id="topic1">
+    <div class="topic-number">TOPIC 01</div>
+    <h2 class="topic-title">日経・テレ東調査で内閣支持率68％に「持ち直し」　共同55.8％との落差が示す世論の読みにくさ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>日本経済新聞社とテレビ東京が2026年6月26〜28日に実施した世論調査で、高市内閣の支持率は68％となり、5月の前回調査から2ポイント上昇してほぼ横ばいの高水準を保った。これは、共同通信が6月20・21日の調査で示した発足以来最低の55.8％から大きく上振れする数字で、わずか1週間ほどの間に調査ごとの支持率が10ポイント以上ばらつく形となった。あわせて、政府・与党が検討する「食料品の消費税率を2年限定で1％に下げ、中・低所得層に現金を配る案」については賛成49％・反対45％と賛否が拮抗し、消費税減税に伴う社会保障への不安を「感じる」との回答が57％に上った。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>支持率の数字が調査主体によって大きく異なるのは、質問の仕方（単純な支持・不支持か、態度未定の扱いか）や調査手法（電話のみか、ネット併用か）の違いによるところが大きい。日経・テレ東調査は従来から相対的に高めの支持率が出やすい傾向があり、共同や時事の電話調査はやや辛めに出る傾向がある。「中傷動画問題」が直撃した6月前半に各社で支持率が下がったのは共通だが、月末にかけての「持ち直し」が本物のトレンドなのか、調査ごとの誤差の範囲なのかは、複数社の数字を並べて見極める必要がある。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>支持率は政権の政策実行力を支える「政治的資本」であり、その水準は減税・財政出動・エネルギーといった高市カラーの政策推進力に直結する。68％という数字は、政権がなお高い体力を保っていることを市場・企業に印象づける一方、消費税減税への賛否拮抗（49％対45％）や社会保障不安57％は、減税が必ずしも世論の追い風一色ではないことを示す。講演では「一つの世論調査に振り回されない読み方」「支持率という資本と政策推進力の連動」という切り口で、数字の扱い方そのものを論じる素材になる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic2">
+    <div class="topic-number">TOPIC 02</div>
+    <h2 class="topic-title">疑惑は暗号資産「サナエトークン」へ拡大　首相は関与否定も後援会の発信と食い違い</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>昨年の自民党総裁選・衆院選をめぐる「中傷動画問題」に加え、首相の名を冠した暗号資産「サナエトークン」をめぐる疑惑が、終盤国会の新たな火種となっている。高市首相は6月22日、暗号資産への関与を否定し、「サナエ」の名称が無断で使われたことに「無念だ」と述べた。一方で、地元秘書は疑惑の中心人物から説明を受けていたことを認めており、首相事務所がトークンの存在を把握したのは2026年3月ごろとされる。報道では、首相が関与を否定する一方で、後援会がSNS上で同トークンの「取り組みに共感」とする趣旨の発信をしていたことが指摘され、首相答弁との食い違いが取り沙汰されている。金融庁には6月18日時点でサナエトークンに関する苦情が3件寄せられたという。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>中傷動画とサナエトークンの双方で名前が挙がるのが、IT企業「neu」の代表とされる人物で、首相の筆頭秘書と中傷動画について連絡を取り合っていた疑いがあるほか、サナエトークンの開発責任者でもあるとされる。首相側は「秘書の説明をまとめた陳述書」を国会に提出し、答弁に代えたい意向を示してきたが、野党はこれを不十分として、秘書本人の証人喚問や、トークン疑惑を含めた集中審議を今国会中に開くよう求めている。一つの疑惑が別の疑惑へと連鎖し、政権の説明責任が会期末の国会日程と絡み合う構図が強まっている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>暗号資産をめぐる疑惑は、無登録営業など金融関連法規への抵触が論点となりうる点で、単なる政治スキャンダルにとどまらない。著名政治家の名を冠したトークンが、金融規制とどう向き合うかという現代的な論点を含む。政局の観点では、疑惑の拡大が野党の日程闘争を勢いづかせ、定数削減など与党が成立を急ぐ案件の処理に影響しかねない。講演では「スキャンダルの連鎖が国会運営を人質にする構図」「暗号資産と政治の新しい接点」という切り口で、リスク要因として整理できる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic3">
+    <div class="topic-number">TOPIC 03</div>
+    <h2 class="topic-title">食料品消費税、2027年4月から「2年限定1％」案で最終調整　給付と組み合わせ</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>政権の看板である物価高対策として、食料品の消費税率を2027年4月1日から引き下げる案が最終調整に入っている。報道によれば、軸となるのは税率を現行8％から1％に下げる案で、2年間の時限措置とし、終了後は「給付付き税額控除」へ移行する道筋が描かれている。外食は10％のまま据え置く見通しで、政府・与党は外食業界や中小農家への補助金支援もあわせて検討している。完全な「ゼロ％」とする案もあるが、システム改修に1年程度を要し会期延長が必要になりうるため、改修が5〜6か月で済む1％案が現実的とされる。高市首相は6月下旬にも最終判断する見込みとされてきた。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>食料品消費税の引き下げは、高市首相が政権の目玉政策として掲げてきたもので、当初は「ゼロ％」も含めて発言が揺れた経緯がある。1％という中途半端にも見える税率は、レジ・会計システムの改修期間や、減税終了後の税率復元の事務負担を見据えた「実務上の落としどころ」だ。一方、日経調査では食品減税が「物価高に効果なし」とする見方が56％に上るなど、効果への懐疑も根強い。減税による税収減と社会保障の財源をどう両立させるかも、世論の不安材料となっている。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>食料品という生活必需品の減税は、消費者心理や小売・外食の価格戦略に直接効く一方、外食を対象外とすることで「内食と外食の不公平」「業態間の線引き」という新たな論点を生む。補助金で副作用を緩和する設計は、減税が単独では完結せず財政支出と一体で回る構造を示す。2年限定で給付付き税額控除へ移行するという出口設計は、減税の「恒久化」を避けつつ物価高局面を乗り切る狙いがある。講演では「減税は出口設計まで含めて評価する」「業態間の線引きが生む新たな不公平」という切り口で、税制と消費を結びつけて語れる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic4">
+    <div class="topic-number">TOPIC 04</div>
+    <h2 class="topic-title">「骨太の方針2026」は7月へ持ち越し　財政目標の見直しと成長戦略の優先順位が焦点</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>政権の中期的な経済財政運営の方向性を示す「骨太の方針2026」は、例年の6月から後ろ倒しとなり、7月の閣議決定が見込まれている。年明けの解散・総選挙で国会と予算の日程が後ろにずれたことが背景にある。焦点は、財政運営の中核目標をこれまでの基礎的財政収支（プライマリーバランス、PB）黒字化から、「債務残高対GDP比を安定的に低下させる」枠組みへと組み替える点だ。あわせて、高市首相が掲げる「強い国 強い経済」の下で、成長戦略を最優先に位置づける方針が示される見通しで、成長・分配・財政規律の優先順位づけが論点となる。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>PB黒字化目標は長く日本の財政運営の旗印だったが、高市首相は積極財政・成長重視の立場から、目標の柔軟化を志向してきた。中核目標を債務残高対GDP比に置き換えれば、分母の名目GDPを成長で押し上げることで指標を改善できる余地が広がり、機動的な財政出動と整合しやすくなる。半面、財政規律の緩みと受け止められれば国債市場の警戒を招くおそれもあり、「拡張財政なら国債売りが加速しうる」との指摘もある。骨太の方針は、こうした成長と規律のトリレンマをどう裁くかを映す文書となる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>財政目標の枠組み変更は、国債市場・金利・為替に波及しうる重要テーマで、市場関係者が最も注視する論点の一つだ。成長戦略を最優先に据える姿勢は、減税・投資促進・賃上げといった政策の束をどう順序づけるかに直結する。7月に骨太の方針と消費税減税の最終判断が重なることで、夏は高市政権の経済政策の「設計図」が一気に固まる節目となる。講演では「PBから債務残高対GDP比へ—財政目標の組み替えが意味するもの」という切り口で、財政規律と市場の反応を結びつけて解説できる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic5">
+    <div class="topic-number">TOPIC 05</div>
+    <h2 class="topic-title">衆院定数「比例45減」法案、会期末の攻防続く　連立の結束を試す試金石</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>自民・維新連立の柱である衆院議員定数の1割削減について、両党は比例代表のみで45議席を削減する法案を6月24日に衆院へ提出し、会期末をにらんだ攻防が続いている。法案は、施行から1年以内に衆院の選挙制度協議会で結論が得られなければ、比例代表の定数を176から131へと自動的に45減らす「自動削減条項」を明記する。高市首相は鈴木俊一幹事長に「比例45減」を軸とする調整を指示し、自民の合同会議でも容認論が大勢を占めた。一方、比例削減で議席を失いやすい国民民主党の玉木代表は「事実上のゲリマンダーだ」と反発し、共産党も「議会制民主主義の破壊」と強く批判している。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>定数1割削減は維新が連立合意に明記させた看板政策で、両党は「現行465人の1割」を目標としてきた。昨年の削減法案が衆院解散で廃案となった後、維新は比例45減を前面に掲げ、連立参加の事実上の条件として早期実現を求めてきた。本紙試算では、比例45減で自民・維新の合計議席が全体の8割超に達し、中小政党が大きく議席を減らすとの分析もあり、制度設計の公平性が問われている。自民内には「先送りを受け入れるムード」もあるとされ、早期実現にこだわる維新との温度差が、連立の火種としてくすぶる。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>定数削減そのものは直接の経済政策ではないが、連立の結束度を測る最重要指標であり、難航すれば安全保障・エネルギー・財政といった高市カラーの政策の推進力にも影響する。逆に難関を越えれば「雨降って地固まる」で連立が強固になるとの見方もある。サナエトークン・中傷動画問題で野党が日程闘争を強める局面では、対立色の濃い定数削減の処理が一段と難しくなる可能性があり、与党は協調しやすい法案と切り分けて会期末をさばく必要に迫られる。企業・市場にとっては政権の持続性を占う材料となる。</p>
+        </div>
+  </div>
+
+  <div class="topic-card" id="topic6">
+    <div class="topic-number">TOPIC 06</div>
+    <h2 class="topic-title">自民党内で派閥の再結集　2027年総裁選をにらむ「ポスト高市」の地ならし</h2>
+    
+        <div class="fact-section">
+          <div class="section-label label-fact">事実</div>
+          <p>高市政権が高支持率を保つ一方で、自民党内では旧派閥の再結集の動きが指摘されている。麻生派に加え、旧安倍派・旧茂木派・旧岸田派、事実上の武田派などが活動を活発化させ、いわゆる「派閥復活」とも評される局面にある。2024年総裁選で高市氏を支えた推薦人らが相次いで国政に復帰し、党内に「高市派」の萌芽も見えるとの見方がある一方、解説者の間では、派閥回帰が2027年の総裁選を見据えた権力闘争、ひいては「高市おろし」の地ならしになりうるとの指摘も出ている。</p>
+        </div>
+    
+        <div class="context-section">
+          <div class="section-label label-context">背景・文脈</div>
+          <p>裏金問題を契機に各派閥が解散して以降、自民党は「派閥なき党運営」を掲げてきたが、人事や選挙をめぐる結節点として、議員の集まりが事実上復活する流れがある。高支持率が続くうちは「反高市」勢力が沈黙せざるを得ないが、支持率が下げ止まらなければ、ポスト高市をうかがう旧主流派が動きやすくなる。副総裁に麻生太郎氏、幹事長に鈴木俊一氏を据えた挙党体制も、裏を返せば多様な勢力の均衡の上に成り立っており、その均衡は支持率という土台に左右される。</p>
+        </div>
+    
+        <div class="implication-section">
+          <div class="section-label label-implication">経済・政策への含意</div>
+          <p>党内力学は、政権が重要政策をどこまで強気で進められるかを左右する。支持率が高く党内が沈黙している間は、消費税減税や財政目標の組み替えといった大きな決断を主導しやすいが、派閥再結集が「高市おろし」に向かえば、政策の求心力や人事の安定が揺らぐ。市場・企業にとっては「政権の持続性」を測るうえで、支持率と並んで党内力学が先行指標となる。講演では「派閥なき党の派閥回帰」「支持率と党内力学の連動」という切り口で、権力構造の読み解き方を提示できる。</p>
+        </div>
+  </div>
+
+  <div class="points-card" id="points">
+    <div class="points-title">💡 ポイント</div>
+    
+    <div class="point-item">
+      <div class="point-num">1</div>
+      <div class="point-text"><strong>一つの世論調査に振り回されない</strong>　同じ時期でも日経・テレ東68％と共同55.8％で10ポイント以上ぶれた。調査手法や質問設計の違いを踏まえ、複数社の数字とトレンドで読むのが鉄則。支持率を「政策実行のための資本」として捉えつつ、その水準を断定しすぎない姿勢が、政局リスクを正しく織り込む鍵になる。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">2</div>
+      <div class="point-text"><strong>夏は経済政策の「設計図」が固まる節目</strong>　7月に「骨太の方針2026」と食料品消費税減税の最終判断が重なる。PB黒字化から債務残高対GDP比への財政目標の組み替え、2年限定1％減税と給付の組み合わせは、市場・金利・消費に波及する。減税は「出口設計」まで含めて評価する視点が有効だ。</div>
+    </div>
+    <div class="point-item">
+      <div class="point-num">3</div>
+      <div class="point-text"><strong>スキャンダルの連鎖が会期末を人質にする</strong>　中傷動画問題は暗号資産「サナエトークン」へと広がり、野党は証人喚問と集中審議を求めて日程闘争を強める。協調しやすい法案と、定数削減のような対立法案を「会期末の仕分け」で切り分けられるかが、政権の体力と国会運営術を測る物差しになる。</div>
+    </div>
+  </div>
+  <div class="sources-section">
+    <div class="sources-title">出典 · Sources</div>
+    <ul class="source-list"><li><a href="https://www.nikkei.com/article/DGXZQOUA25BQY0V20C26A6000000/" target="_blank" rel="noopener">高市内閣支持2ポイント上昇68% 食品消費税1%案に賛成49%（日本経済新聞）</a></li>
+<li><a href="https://txbiz.tv-tokyo.co.jp/readings/2917" target="_blank" rel="noopener">高市内閣 支持率上昇68％ テレ東・日経 6月世論調査（テレ東BIZ）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA211FH0R20C26A6000000/" target="_blank" rel="noopener">高市内閣の支持率55.8% 共同通信世論調査（日本経済新聞）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026062200345&g=pol" target="_blank" rel="noopener">秘書の説明文書、国会提出へ 高市首相、中傷・トークン疑惑巡り（時事ドットコム）</a></li>
+<li><a href="https://www.tokyo-np.co.jp/article/496684" target="_blank" rel="noopener">「サナエトークン」めぐる高市首相の答弁に食い違い…後援会はSNSで「取り組みに共感」（東京新聞）</a></li>
+<li><a href="https://www.jiji.com/jc/article?k=2026040701016&g=pol" target="_blank" rel="noopener">高市首相、「サナエ」無断使用は無念 暗号資産巡り（時事ドットコム）</a></li>
+<li><a href="https://jbpress.ismedia.jp/articles/-/95519" target="_blank" rel="noopener">サナエトークン、中傷動画疑惑、衆院議員定数削減…終盤国会の高市政権が迎えた正念場（JBpress）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA145FJ0U6A510C2000000/" target="_blank" rel="noopener">食品の消費税減税「1%かゼロか」 高市首相、6月にも判断へ（日本経済新聞）</a></li>
+<li><a href="https://taxlabor.com/shouhizei-genzei-2026-takaichi-itsu/" target="_blank" rel="noopener">消費税減税はいつから？2027年4月開始へ最終調整・税率1%案が軸（税理士解説）</a></li>
+<li><a href="https://civic-ai.xyz/articles/honebuto-2026" target="_blank" rel="noopener">骨太の方針2026はいつ発表？ 例年より遅い「7月」見通しと策定の3つの焦点（CIVIC AI）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUB115ZM0R10C26A6000000/" target="_blank" rel="noopener">骨太の方針とは 予算の方向性示す、拡張財政なら国債売りが加速も（日本経済新聞）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA091OG0Z00C26A6000000/" target="_blank" rel="noopener">自民党、衆院定数の「自動削減条項」を維持 比例45減を法案明記へ（日本経済新聞）</a></li>
+<li><a href="https://news.web.nhk/newsweb/na/na-k10015152421000" target="_blank" rel="noopener">自民 維新 衆院定数削減 比例のみ45議席削減の法案了承（NHK）</a></li>
+<li><a href="https://www.nikkei.com/article/DGXZQOUA085PE0Y6A200C2000000/" target="_blank" rel="noopener">自民党に「高市派」の萌芽 2024年総裁選の推薦人ら相次ぎ国政復帰（日本経済新聞）</a></li>
+<li><a href="https://news.tnc.co.jp/news/articles/NID2026042330102" target="_blank" rel="noopener">自民党“派閥回帰”は「高市おろし」のサインか 2027年の総裁選へ権力闘争が再燃も（福岡TNC）</a></li>
+</ul>
+  </div>
+</main>
+<footer>
+  <p>日本政治ブリーフィング · Japan Politics Daily Briefing · 2026年6月28日</p>
+  <p style="margin-top:6px;">For Yoshii · ビジネス・専門家向け講演準備</p>
+</footer>
+</body>
+</html>
